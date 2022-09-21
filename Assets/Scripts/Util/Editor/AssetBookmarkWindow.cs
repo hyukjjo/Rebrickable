@@ -12,7 +12,7 @@ public class AssetBookmarkWindow : EditorWindow
     //Model
     private List<Object> _assetList = new List<Object>();
 
-    private string _regKey;
+    private static string _regKey;
 
     [MenuItem("Window/Asset Bookmark")]
     public static void ShowWindow()
@@ -22,15 +22,44 @@ public class AssetBookmarkWindow : EditorWindow
         window.titleContent = EditorGUIUtility.TrTextContentWithIcon("Asset Bookmark", "UnityEditor.ConsoleWindow");
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        _regKey = $"AssetBookmark_At_{Application.dataPath.Split('/')[1]}";
+
+        foreach (var data in EditorPrefs.GetString(_regKey).Split('|'))
+        {
+            if (string.IsNullOrEmpty(data)) continue;
+            var idx = data.Substring(0, data.IndexOf('/'));
+            var guid = data.Substring(data.IndexOf('/') + 1);
+            _assetList.Add(AssetDatabase.LoadAssetAtPath<Object>(AssetDatabase.GUIDToAssetPath(guid)));
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        _assetListView = new ReorderableList(_assetList, typeof(Object), displayHeader: false, draggable: true, displayAddButton: true, displayRemoveButton: true)
+        {
+            drawElementCallback = (rect, index, active, focused) =>
+            {
+                _assetList[index] = EditorGUI.ObjectField(rect, _assetList[index], typeof(Object), false);
+                UpdatePref();
+            }
+        };
+    }
+
+    private void UpdatePref()
+    {
+        var prefVal = "";
+
+        for (int i = 0; i < _assetList.Count; i++)
+        {
+            prefVal += $"{i}/{AssetDatabase.GUIDFromAssetPath(AssetDatabase.GetAssetPath(_assetList[i])).ToString()}|";
+        }
+        EditorPrefs.SetString(_regKey, prefVal);
+    }
+
+    private void OnGUI()
+    {
+        _assetListView.DoLayoutList();
     }
 }
