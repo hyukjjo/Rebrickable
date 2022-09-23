@@ -27,21 +27,9 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance == null)
+        if (Instance != this)
         {
-            _instance = (T)FindObjectOfType(typeof(T));
-
-            if (_instance == null)
-            {
-                var singletonObject = new GameObject();
-                _instance = singletonObject.AddComponent<T>();
-                singletonObject.name = $"{typeof(T).ToString()} (Singleton)";
-                DontDestroyOnLoad(singletonObject);
-            }
-            else
-            {
-                DontDestroyOnLoad(gameObject);
-            }
+            Destroy(gameObject);
         }
     }
 }
