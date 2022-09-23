@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10bf7fe70c972741b400ff034c080a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterLayoutGroup: {fileID: 0}
+  _characterLayoutGroup: {fileID: 2105996114}
 --- !u!224 &1011058026 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4565255275808702657, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
@@ -395,6 +395,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &2105996114 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4565255274713790201, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
+  m_PrefabInstance: {fileID: 4565255276416845227}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4565255276416845227
 PrefabInstance:
   m_ObjectHideFlags: 0
