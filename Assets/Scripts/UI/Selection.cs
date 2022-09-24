@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ISelection
+public class Selection : MonoBehaviour
 {
-    [SerializeField]private 
+    [Header("Model")]
+    [SerializeField] private GameObject _temp; 
 }
