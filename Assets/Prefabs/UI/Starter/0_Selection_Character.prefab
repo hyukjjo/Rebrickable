@@ -70,6 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4565255275808702657}
+  - component: {fileID: 4565255276416845229}
   m_Layer: 5
   m_Name: 0_Selection_Character
   m_TagString: Untagged
@@ -98,3 +99,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4565255276416845229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4565255275808702658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1223f6b5bd14f7341a43a86b8835cefb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selectionModels:
+  - _sprite: {fileID: 0}
+    _selectionActionType: 0
+    _sceneToLoad:
+      _scenePath: 
+    _nextContentPrefab: {fileID: 0}
+  _gridLayoutGroup: {fileID: 4565255274713790201}
