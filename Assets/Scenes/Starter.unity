@@ -284,8 +284,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4565255275808702658, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
       propertyPath: m_Name
-      value: 0_Selection_Character
+      value: Selection_Character
       objectReference: {fileID: 0}
+    - target: {fileID: 4565255276416845229, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
+      propertyPath: _viewPrefab
+      value: 
+      objectReference: {fileID: 8537625594145777910, guid: 6291ffa3282436041994680762f9e4fb, type: 3}
+    - target: {fileID: 4565255276416845229, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
+      propertyPath: _characterViewPrefab
+      value: 
+      objectReference: {fileID: 8537625594145777910, guid: 6291ffa3282436041994680762f9e4fb, type: 3}
+    - target: {fileID: 4565255276416845229, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
+      propertyPath: _selectionModels.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565255276416845229, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
+      propertyPath: _selectionModels.Array.data[0]._sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: afd901e9fb49ad04e8f9a8b570858799, type: 3}
+    - target: {fileID: 4565255276416845229, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
+      propertyPath: _selectionModels.Array.data[1]._sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 85f6ec1626e037b45ae0f9d281d0dcca, type: 3}
+    - target: {fileID: 4565255276416845229, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
+      propertyPath: _selectionModels.Array.data[2]._sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4eb43dc4e9e37844d97ff6523da52b70, type: 3}
+    - target: {fileID: 4565255276416845229, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
+      propertyPath: _selectionModels.Array.data[0]._selectionActionType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565255276416845229, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
+      propertyPath: _selectionModels.Array.data[1]._selectionActionType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565255276416845229, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
+      propertyPath: _selectionModels.Array.data[2]._selectionActionType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565255276416845229, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
+      propertyPath: _selectionModels.Array.data[0]._sprites.normalSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: afd901e9fb49ad04e8f9a8b570858799, type: 3}
+    - target: {fileID: 4565255276416845229, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
+      propertyPath: _selectionModels.Array.data[1]._sprites.normalSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 85f6ec1626e037b45ae0f9d281d0dcca, type: 3}
+    - target: {fileID: 4565255276416845229, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
+      propertyPath: _selectionModels.Array.data[2]._sprites.normalSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4eb43dc4e9e37844d97ff6523da52b70, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
 --- !u!224 &393725391 stripped
