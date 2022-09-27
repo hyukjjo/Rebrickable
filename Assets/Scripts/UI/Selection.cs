@@ -12,9 +12,14 @@ public class Selection : MonoBehaviour
     [Header("View")]
     
     [SerializeField] private Transform _gridLayoutGroup;
+    [SerializeField] private GameObject _viewPrefab;
 
     private void Start()
     {
-        
+        foreach(var selectionModel in _selectionModels)
+        {
+            var view = Instantiate(_viewPrefab, _gridLayoutGroup).GetComponent<CharacterView>();
+            view.Init(selectionModel.Sprites, selectionModel.OnClicked);
+        }
     }
 }
