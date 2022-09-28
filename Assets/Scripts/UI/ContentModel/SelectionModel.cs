@@ -17,12 +17,12 @@ namespace ContentModel
             GoToNextDepth
         }
 
-        [SerializeField] private CharacterView.Sprites _sprites;
+        [SerializeField] private ContentView.Sprites _sprites;
         [SerializeField] private SelectionActionType _selectionActionType;
         [SerializeField] private ScenePath _sceneToLoad;
         [SerializeField] private GameObject _nextContentPrefab;
 
-        public CharacterView.Sprites Sprites => _sprites;
+        public ContentView.Sprites Sprites => _sprites;
 
         public Action OnClicked => () =>
         {

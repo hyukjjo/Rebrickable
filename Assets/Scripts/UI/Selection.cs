@@ -18,7 +18,7 @@ public class Selection : MonoBehaviour
     {
         foreach(var selectionModel in _selectionModels)
         {
-            var view = Instantiate(_viewPrefab, _gridLayoutGroup).GetComponent<CharacterView>();
+            var view = Instantiate(_viewPrefab, _gridLayoutGroup).GetComponent<ContentView>();
             view.Init(selectionModel.Sprites, selectionModel.OnClicked);
         }
     }
