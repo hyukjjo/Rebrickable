@@ -25,7 +25,10 @@ public class ContentView : MonoBehaviour //View를 공통적으로 사용하기 위해서는 �
         _onHovered = onHovered;
         _sprites = sprites ?? _sprites;
         _image.sprite = _sprites.normalSprite;
+    }
 
-        
+    public void OnClicked()
+    {
+        _onClicked?.Invoke();
     }
 }

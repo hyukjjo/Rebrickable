@@ -26,6 +26,7 @@ namespace ContentModel
 
         public Action OnClicked => () =>
         {
+            Debug.Log("Button Clicked");
             switch (_selectionActionType)
             {
                 case SelectionActionType.GoToNextScene:

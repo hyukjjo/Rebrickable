@@ -94,6 +94,7 @@ MonoBehaviour:
   _sprites:
     normalSprite: {fileID: 0}
     hoverSprite: {fileID: 0}
+  button: {fileID: 0}
 --- !u!114 &2651915893211422771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,4 +138,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8537625594145777905}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 368247606452255723}
+        m_TargetAssemblyTypeName: ContentView, Assembly-CSharp
+        m_MethodName: OnClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
