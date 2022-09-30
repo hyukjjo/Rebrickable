@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class ContentView : MonoBehaviour //View¸¦ °øÅëÀûÀ¸·Î »ç¿ëÇÏ±â À§ÇØ¼­´Â »óÀ§ Å¬·¡½º·Î ¿Ã¸®°í CharacterView°¡ »ó¼Ó¹Þ¾Æ¾ßÇÒ µí. ÀÏ´ÜÀº Å×½ºÆ® 22.09.27
+public class ContentView : Selectable //Viewï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¸ï¿½ï¿½ï¿½ CharacterViewï¿½ï¿½ ï¿½ï¿½Ó¹Þ¾Æ¾ï¿½ï¿½ï¿½ ï¿½ï¿½. ï¿½Ï´ï¿½ï¿½ï¿½ ï¿½×½ï¿½Æ® 22.09.27
 {
     [Serializable]
     public class Sprites
@@ -25,10 +26,23 @@ public class ContentView : MonoBehaviour //View¸¦ °øÅëÀûÀ¸·Î »ç¿ëÇÏ±â À§ÇØ¼­´Â »
         _onHovered = onHovered;
         _sprites = sprites ?? _sprites;
         _image.sprite = _sprites.normalSprite;
+        button.onClick.AddListener(OnClicked);
     }
 
     public void OnClicked()
     {
         _onClicked?.Invoke();
+    }
+
+    public override void OnPointerEnter(PointerEventData eventData)
+    {
+        base.OnPointerEnter(eventData);
+        Debug.Log("Pointer Enter");
+    }
+
+    public override void OnPointerExit(PointerEventData eventData)
+    {
+        base.OnPointerExit(eventData);
+        Debug.Log("Pointer Enter");
     }
 }
