@@ -30,6 +30,7 @@ namespace ContentModel
             switch (_selectionActionType)
             {
                 case SelectionActionType.GoToNextScene:
+                    SceneManager.LoadScene(_sceneToLoad);
                     break;
                 case SelectionActionType.GoToNextDepth:
                     break;
