@@ -312,7 +312,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 4eb43dc4e9e37844d97ff6523da52b70, type: 3}
     - target: {fileID: 4565255276416845229, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
       propertyPath: _selectionModels.Array.data[0]._selectionActionType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4565255276416845229, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
       propertyPath: _selectionModels.Array.data[1]._selectionActionType
@@ -334,6 +334,10 @@ PrefabInstance:
       propertyPath: _selectionModels.Array.data[2]._sprites.normalSprite
       value: 
       objectReference: {fileID: 21300000, guid: 4eb43dc4e9e37844d97ff6523da52b70, type: 3}
+    - target: {fileID: 4565255276416845229, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
+      propertyPath: _selectionModels.Array.data[0]._sceneToLoad._scenePath
+      value: Assets/Scenes/Game.unity
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bcb1642f964e6c42964a85229d0be05, type: 3}
 --- !u!224 &393725391 stripped
