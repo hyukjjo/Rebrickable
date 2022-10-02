@@ -9,4 +9,9 @@ public class CharacterView : ContentView
     {
         base.Init(sprites, onClick, onHovered);
     }
+
+    public override void OnClicked()
+    {
+        base.OnClicked();
+    }
 }

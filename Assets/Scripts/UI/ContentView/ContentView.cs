@@ -29,7 +29,7 @@ public class ContentView : Selectable //Viewï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿
         button.onClick.AddListener(OnClicked);
     }
 
-    public void OnClicked()
+    public virtual void OnClicked()
     {
         _onClicked?.Invoke();
     }
