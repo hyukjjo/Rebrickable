@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 using Utility;
-using UnityEditor;
 
-namespace ContentModel
+namespace Starter.ContentModel
 {
     [Serializable]
-    public class SelectionModel
+    public class ContentModel
     {
         private enum SelectionActionType
         {
@@ -17,12 +14,9 @@ namespace ContentModel
             GoToNextDepth
         }
 
-        [SerializeField] private ContentView.Sprites _sprites;
         [SerializeField] private SelectionActionType _selectionActionType;
         [SerializeField] private ScenePath _sceneToLoad;
-        [SerializeField] private GameObject _nextContentPrefab;
-
-        public ContentView.Sprites Sprites => _sprites;
+        [SerializeField] private GameObject _nextContentPresenterPrefab;
 
         public Action OnClicked => () =>
         {
