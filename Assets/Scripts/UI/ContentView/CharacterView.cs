@@ -8,6 +8,11 @@ public class CharacterView : ContentView
         base.Init(sprites, onClick, onHovered);
     }
 
+    public override void Disable()
+    {
+        base.Disable();
+    }
+
     public override void OnClicked()
     {
         base.OnClicked();
