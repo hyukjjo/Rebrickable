@@ -27,6 +27,10 @@ namespace Starter.ContentModel
                     SceneManager.LoadScene(_sceneToLoad);
                     break;
                 case SelectionActionType.GoToNextDepth:
+                    if(_nextContentPresenterPrefab != null)
+                    {
+                        _nextContentPresenterPrefab.SetActive(true);
+                    }
                     break;
                 default:
                     break;
