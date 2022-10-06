@@ -10,24 +10,23 @@ public class CharacterPresenter : ContentPresenter
     [SerializeField] private Transform _gridLayoutGroup;
     [SerializeField] private GameObject _viewPrefab;
 
+    private List<CharacterView> _characterViewList;
+
     public override void OnEnable()
     {
         foreach (var characterModels in _characterModels)
         {
             var view = Instantiate(_viewPrefab, _gridLayoutGroup).GetComponent<CharacterView>();
             view.Init(characterModels.Sprites, characterModels.OnClicked);
+            _characterViewList.Add(view);
         }
     }
 
     public override void OnDisable()
-    {//오류임 수정 필요
-        if (_currentPresenterActivation == false)
+    {
+        foreach (var characterView in _characterViewList)
         {
-            foreach (var characterModels in _characterModels)
-            {
-                var view = Instantiate(_viewPrefab, _gridLayoutGroup).GetComponent<CharacterView>();
-                view.Init(characterModels.Sprites, characterModels.OnClicked);
-            }
+            characterView.Disable();
         }
     }
 }
