@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ContentPresenter : MonoBehaviour
 {
-    [SerializeField] protected bool _currentPresenterActivation = false;
+
 
     public virtual void OnEnable()
     {

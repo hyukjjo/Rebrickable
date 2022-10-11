@@ -10,15 +10,25 @@ public class CharacterPresenter : ContentPresenter
     [SerializeField] private Transform _gridLayoutGroup;
     [SerializeField] private GameObject _viewPrefab;
 
-    private List<CharacterView> _characterViewList;
+    private List<CharacterView> _characterViewList = new List<CharacterView>();
 
     public override void OnEnable()
     {
-        foreach (var characterModels in _characterModels)
+        if (_characterViewList.Count == 0)
         {
-            var view = Instantiate(_viewPrefab, _gridLayoutGroup).GetComponent<CharacterView>();
-            view.Init(characterModels.Sprites, characterModels.OnClicked);
-            _characterViewList.Add(view);
+            foreach (var characterModels in _characterModels)
+            {
+                var view = Instantiate(_viewPrefab, _gridLayoutGroup).GetComponent<CharacterView>();
+                view.Init(characterModels.Sprites, characterModels.OnClicked);
+                _characterViewList.Add(view);
+            }
+        }
+        else
+        {
+            foreach(var view in _characterViewList)
+            {
+                view.Enable();
+            }
         }
     }
 

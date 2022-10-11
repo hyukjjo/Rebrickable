@@ -29,6 +29,12 @@ namespace Starter.ContentView
             button.onClick.AddListener(OnClicked);
         }
 
+        public virtual void Enable()
+        {
+            gameObject.SetActive(true);
+            button.onClick.AddListener(OnClicked);
+        }
+
         public virtual void Disable()
         {
             gameObject.SetActive(false);
