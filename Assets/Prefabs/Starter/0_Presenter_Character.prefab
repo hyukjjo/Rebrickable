@@ -111,27 +111,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1223f6b5bd14f7341a43a86b8835cefb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gridLayoutGroup: {fileID: 4565255274713790201}
+  _viewPrefab: {fileID: 8537625594145777910, guid: 682f46b87bdbd45b2ae675041c47ec40, type: 3}
   _characterModels:
-  - _selectionActionType: 0
+  - _selectionActionType: 2
     _sceneToLoad:
-      _scenePath: Assets/Scenes/Game.unity
-    _nextContentPrefab: {fileID: 0}
+      _scenePath: 
+    _nextContentPresenterPrefab: {fileID: 0}
     _sprites:
       normalSprite: {fileID: 21300000, guid: 4eb43dc4e9e37844d97ff6523da52b70, type: 3}
       hoverSprite: {fileID: 0}
-  - _selectionActionType: 0
+  - _selectionActionType: 2
     _sceneToLoad:
-      _scenePath: Assets/Scenes/Game.unity
-    _nextContentPrefab: {fileID: 0}
+      _scenePath: 
+    _nextContentPresenterPrefab: {fileID: 0}
     _sprites:
       normalSprite: {fileID: 21300000, guid: 85f6ec1626e037b45ae0f9d281d0dcca, type: 3}
       hoverSprite: {fileID: 0}
-  - _selectionActionType: 0
+  - _selectionActionType: 2
     _sceneToLoad:
-      _scenePath: Assets/Scenes/Game.unity
-    _nextContentPrefab: {fileID: 0}
+      _scenePath: 
+    _nextContentPresenterPrefab: {fileID: 0}
     _sprites:
       normalSprite: {fileID: 21300000, guid: afd901e9fb49ad04e8f9a8b570858799, type: 3}
       hoverSprite: {fileID: 0}
-  _gridLayoutGroup: {fileID: 4565255274713790201}
-  _viewPrefab: {fileID: 8537625594145777910, guid: 682f46b87bdbd45b2ae675041c47ec40, type: 3}
