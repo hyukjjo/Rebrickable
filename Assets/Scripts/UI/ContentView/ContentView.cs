@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 namespace Starter.ContentView
 {
@@ -16,7 +17,6 @@ namespace Starter.ContentView
 
         [SerializeField] private Image _image;
         [SerializeField] private Sprites _sprites;
-        [SerializeField] private Button button;
         private Action _onClicked;
         private Action _onHovered;
 
@@ -26,23 +26,21 @@ namespace Starter.ContentView
             _onHovered = onHovered;
             _sprites = sprites ?? _sprites;
             _image.sprite = _sprites.normalSprite;
-            button.onClick.AddListener(OnClicked);
         }
 
         public virtual void Enable()
         {
             gameObject.SetActive(true);
-            button.onClick.AddListener(OnClicked);
         }
 
         public virtual void Disable()
         {
             gameObject.SetActive(false);
-            button.onClick.RemoveListener(OnClicked);
         }
 
-        public virtual void OnClicked()
+        public override void OnPointerDown(PointerEventData eventData)
         {
+            base.OnPointerDown(eventData);
             _onClicked?.Invoke();
         }
 

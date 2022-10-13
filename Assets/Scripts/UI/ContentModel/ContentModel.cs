@@ -11,7 +11,9 @@ namespace Starter.ContentModel
         private enum SelectionActionType
         {
             GoToNextScene = 0,
-            GoToNextDepth
+            GoToNextDepth = 1,
+            Quit = 2,
+            None
         }
 
         [SerializeField] private SelectionActionType _selectionActionType;
@@ -31,6 +33,12 @@ namespace Starter.ContentModel
                     {
                         _nextContentPresenterPrefab.SetActive(true);
                     }
+                    break;
+                case SelectionActionType.Quit:
+                    Application.Quit();
+                    break;
+                case SelectionActionType.None:
+                    //
                     break;
                 default:
                     break;

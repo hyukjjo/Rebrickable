@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class ContentPresenter : MonoBehaviour
 {
-
+    [Header("View")]
+    [SerializeField] protected Transform _gridLayoutGroup;
+    [SerializeField] protected GameObject _viewPrefab;
 
     public virtual void OnEnable()
     {

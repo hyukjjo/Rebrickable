@@ -1,5 +1,6 @@
 using System;
 using Starter.ContentView;
+using UnityEngine.EventSystems;
 
 public class CharacterView : ContentView
 {
@@ -13,8 +14,9 @@ public class CharacterView : ContentView
         base.Disable();
     }
 
-    public override void OnClicked()
+    public override void OnPointerDown(PointerEventData eventData)
     {
-        base.OnClicked();
+        base.OnPointerDown(eventData);
+
     }
 }

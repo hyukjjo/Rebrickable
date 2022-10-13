@@ -6,9 +6,7 @@ public class CharacterPresenter : ContentPresenter
     [Header("Model")]
     [SerializeField] private List<CharacterModel> _characterModels;
 
-    [Header("View")]
-    [SerializeField] private Transform _gridLayoutGroup;
-    [SerializeField] private GameObject _viewPrefab;
+    
 
     private List<CharacterView> _characterViewList = new List<CharacterView>();
 
