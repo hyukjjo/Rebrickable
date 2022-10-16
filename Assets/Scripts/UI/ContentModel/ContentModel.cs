@@ -38,7 +38,6 @@ namespace Starter.ContentModel
                     Application.Quit();
                     break;
                 case SelectionActionType.None:
-                    //
                     break;
                 default:
                     break;

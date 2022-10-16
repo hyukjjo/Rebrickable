@@ -17,6 +17,5 @@ public class CharacterView : ContentView
     public override void OnPointerDown(PointerEventData eventData)
     {
         base.OnPointerDown(eventData);
-
     }
 }
