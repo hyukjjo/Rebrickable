@@ -5,7 +5,7 @@ using Utility;
 
 public class GameManager : Singleton<GameManager>
 {
-    public ScenePath _sceneToLoad;
+    public bool LoadSceneReady = false;
 
     // Start is called before the first frame update
     void Start()
