@@ -26,7 +26,14 @@ namespace Starter.ContentModel
             switch (_selectionActionType)
             {
                 case SelectionActionType.GoToNextScene:
-                    GameManager.Instance._sceneToLoad = _sceneToLoad;
+                    if(GameManager.Instance.LoadSceneReady)
+                    {
+                        SceneManager.LoadScene(_sceneToLoad);
+                    }
+                    else
+                    {
+                        UIManager.Instance.ShowPopUpWarning();
+                    }
                     break;
                 case SelectionActionType.GoToNextDepth:
                     if(_nextContentPresenterPrefab != null)
