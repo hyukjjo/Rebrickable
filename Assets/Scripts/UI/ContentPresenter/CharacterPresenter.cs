@@ -17,7 +17,7 @@ public class CharacterPresenter : ContentPresenter
             foreach (var characterModels in _characterModels)
             {
                 var view = Instantiate(_viewPrefab, _gridLayoutGroup).GetComponent<CharacterView>();
-                view.Init(characterModels.Sprites, characterModels.OnClicked);
+                view.InitView(characterModels.Sprites, characterModels.OnClicked);
                 _characterViewList.Add(view);
             }
         }
