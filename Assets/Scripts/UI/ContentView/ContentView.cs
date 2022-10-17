@@ -20,12 +20,17 @@ namespace Starter.ContentView
         private Action _onClicked;
         private Action _onHovered;
 
-        public virtual void Init(Sprites sprites = null, Action onClick = null, Action onHovered = null)
+        public virtual void InitView(Sprites sprites = null, Action onClick = null, Action onHovered = null)
         {
             _onClicked = onClick;
             _onHovered = onHovered;
             _sprites = sprites ?? _sprites;
             _image.sprite = _sprites.normalSprite;
+        }
+
+        public virtual void ResetView()
+        {
+            
         }
 
         public virtual void Enable()

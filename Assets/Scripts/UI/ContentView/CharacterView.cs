@@ -4,9 +4,9 @@ using UnityEngine.EventSystems;
 
 public class CharacterView : ContentView
 {
-    public override void Init(Sprites sprites = null, Action onClick = null, Action onHovered = null)
+    public override void InitView(Sprites sprites = null, Action onClick = null, Action onHovered = null)
     {
-        base.Init(sprites, onClick, onHovered);
+        base.InitView(sprites, onClick, onHovered);
     }
 
     public override void Disable()
@@ -17,5 +17,6 @@ public class CharacterView : ContentView
     public override void OnPointerDown(PointerEventData eventData)
     {
         base.OnPointerDown(eventData);
+        GameManager.Instance.LoadSceneReady = true;
     }
 }
