@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class UIManager : Singleton<UIManager>
 {
     public List<ContentPresenter> contentPresenters = new List<ContentPresenter>();
     [SerializeField] private PopUpWarning _popUpWarning;
+    [SerializeField] private PopUpYesOrNo _popUpYesOrNo;
 
     public void InputLock()
     {
@@ -49,6 +51,18 @@ public class UIManager : Singleton<UIManager>
     public void HidePopUpWarning()
     {
         _popUpWarning.gameObject.SetActive(false);
+        InputUnlock();
+    }
+
+    public void ShowPopUpYesOrNo()
+    {
+        InputLock();
+        _popUpYesOrNo.gameObject.SetActive(true);
+    }
+
+    public void HidePopUpYesOrNo()
+    {
+        _popUpYesOrNo.gameObject.SetActive(false);
         InputUnlock();
     }
 }
