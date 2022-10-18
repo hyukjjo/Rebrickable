@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PopUpYesOrNo : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool answer;
+
+    private void OnEnable()
+    {
+        //
+    }
+
+    private void OnDisable()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SelectYesOrNo(bool select)
     {
-        
+        answer = select;
     }
 }
