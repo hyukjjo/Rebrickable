@@ -18,4 +18,9 @@ public class GameManager : Singleton<GameManager>
     {
         
     }
+
+    public void SaveDataAndExitGame()
+    {
+        Debug.Log("Save data and exit this game.");
+    }
 }
