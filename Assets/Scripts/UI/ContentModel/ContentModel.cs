@@ -42,7 +42,7 @@ namespace Starter.ContentModel
                     }
                     break;
                 case SelectionActionType.Quit:
-                    Application.Quit();
+                    UIManager.Instance.ShowPopUpYesOrNo();
                     break;
                 case SelectionActionType.None:
                     break;
