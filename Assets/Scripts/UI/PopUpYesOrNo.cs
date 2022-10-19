@@ -19,5 +19,15 @@ public class PopUpYesOrNo : MonoBehaviour
     public void SelectYesOrNo(bool select)
     {
         answer = select;
+
+        if (select)
+        {
+            GameManager.Instance.SaveDataAndExitGame();
+            UIManager.Instance.HidePopUpYesOrNo();
+        }
+        else
+        {
+            UIManager.Instance.HidePopUpYesOrNo();
+        }
     }
 }
