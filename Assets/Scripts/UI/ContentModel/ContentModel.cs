@@ -13,6 +13,7 @@ namespace Starter.ContentModel
             GoToNextScene = 0,
             GoToNextDepth = 1,
             Quit = 2,
+            SelectCharacter = 3,
             None
         }
 
@@ -43,6 +44,9 @@ namespace Starter.ContentModel
                     break;
                 case SelectionActionType.Quit:
                     UIManager.Instance.ShowPopUpYesOrNo();
+                    break;
+                case SelectionActionType.SelectCharacter:
+                    GameManager.Instance.LoadSceneReady = true;
                     break;
                 case SelectionActionType.None:
                     break;
