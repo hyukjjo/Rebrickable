@@ -54,10 +54,12 @@ public class UIManager : Singleton<UIManager>
         InputUnlock();
     }
 
-    public void ShowPopUpYesOrNo()
+    public void ShowPopUpYesOrNo(Action yesAction, Action noAction)
     {
         InputLock();
         _popUpYesOrNo.gameObject.SetActive(true);
+        _popUpYesOrNo.OnYesClicked = yesAction;
+        _popUpYesOrNo.OnNoClicked = noAction;
     }
 
     public void HidePopUpYesOrNo()
