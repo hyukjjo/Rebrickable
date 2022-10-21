@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PopUpYesOrNo : MonoBehaviour
 {
-    public bool answer;
+    public Action OnYesClicked;
+    public Action OnNoClicked;
 
     private void OnEnable()
     {
@@ -16,18 +18,13 @@ public class PopUpYesOrNo : MonoBehaviour
         
     }
 
-    public void SelectYesOrNo(bool select)
+    public void Yes()
     {
-        answer = select;
+        OnYesClicked?.Invoke();
+    }
 
-        if (select)
-        {
-            GameManager.Instance.SaveDataAndExitGame();
-            UIManager.Instance.HidePopUpYesOrNo();
-        }
-        else
-        {
-            UIManager.Instance.HidePopUpYesOrNo();
-        }
+    public void No()
+    {
+        OnNoClicked?.Invoke();
     }
 }
