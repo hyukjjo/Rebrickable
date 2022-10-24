@@ -21,10 +21,12 @@ public class PopUpYesOrNo : MonoBehaviour
     public void Yes()
     {
         OnYesClicked?.Invoke();
+        UIManager.Instance.HidePopUpYesOrNo();
     }
 
     public void No()
     {
         OnNoClicked?.Invoke();
+        UIManager.Instance.HidePopUpYesOrNo();
     }
 }
