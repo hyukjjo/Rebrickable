@@ -7,7 +7,7 @@ public class Player_Black : Player
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("Player_Black Start");
     }
 
     // Update is called once per frame
