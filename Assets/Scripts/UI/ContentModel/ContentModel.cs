@@ -21,7 +21,7 @@ namespace Starter.ContentModel
         [SerializeField] private ScenePath _sceneToLoad;
         [SerializeField] private GameObject _nextContentPresenterPrefab;
 
-        public Action OnClicked => () =>
+        public virtual Action OnClicked => () =>
         {
             Debug.Log("Button Clicked");
             switch (_selectionActionType)
