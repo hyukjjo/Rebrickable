@@ -6,9 +6,14 @@ using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
-    public List<ContentPresenter> contentPresenters = new List<ContentPresenter>();
+    [SerializeField] private List<ContentPresenter> contentPresenters = new List<ContentPresenter>();
     [SerializeField] private PopUpWarning _popUpWarning;
     [SerializeField] private PopUpYesOrNo _popUpYesOrNo;
+
+    private void Start()
+    {
+        contentPresenters = FindObjectsOfType<ContentPresenter>();
+    }
 
     public void InputLock()
     {

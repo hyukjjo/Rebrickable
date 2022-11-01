@@ -6,7 +6,7 @@ using Utility;
 public class GameManager : Singleton<GameManager>
 {
     public bool LoadSceneReady = false;
-    public Player Player;
+    public GameObject PlayerPrefab;
 
     // Start is called before the first frame update
     void Start()
