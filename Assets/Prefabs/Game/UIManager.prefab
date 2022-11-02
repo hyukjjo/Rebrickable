@@ -46,9 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725b8129737f9b94492a10c14b93ca46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contentPresenters:
-  - {fileID: 0}
-  - {fileID: 0}
+  contentPresenters: []
   _popUpWarning: {fileID: 8707492291866281689}
   _popUpYesOrNo: {fileID: 4433917454098075326}
 --- !u!1001 &165186070412458573

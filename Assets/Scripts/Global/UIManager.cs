@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +11,7 @@ public class UIManager : Singleton<UIManager>
 
     private void Start()
     {
-        contentPresenters = FindObjectsOfType<ContentPresenter>();
+        contentPresenters.AddRange(FindObjectsOfType<ContentPresenter>());
     }
 
     public void InputLock()
