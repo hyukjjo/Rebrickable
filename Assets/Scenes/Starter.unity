@@ -519,17 +519,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4565255275808702657, guid: 546248e25fcc64b7c85e7b661b6c3926, type: 3}
   m_PrefabInstance: {fileID: 1913221577}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1913221579 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4565255276416845229, guid: 546248e25fcc64b7c85e7b661b6c3926, type: 3}
-  m_PrefabInstance: {fileID: 1913221577}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1223f6b5bd14f7341a43a86b8835cefb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &905355455198133990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -636,17 +625,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5376357163652081152, guid: f05b794b504e401469f01eb04b1616f4, type: 3}
   m_PrefabInstance: {fileID: 905355455198133990}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &905355455198133993 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 905355455198133993, guid: f05b794b504e401469f01eb04b1616f4, type: 3}
-  m_PrefabInstance: {fileID: 905355455198133990}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5323dc39c0fba346b1b18d20b62a18c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2862719825209642267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -658,14 +636,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5139702120491523111, guid: fbd3082e11248bf488a7bc522ba7d19f, type: 3}
-      propertyPath: contentPresenters.Array.data[0]
-      value: 
-      objectReference: {fileID: 1913221579}
-    - target: {fileID: 5139702120491523111, guid: fbd3082e11248bf488a7bc522ba7d19f, type: 3}
-      propertyPath: contentPresenters.Array.data[1]
-      value: 
-      objectReference: {fileID: 905355455198133993}
     - target: {fileID: 8203747974317923306, guid: fbd3082e11248bf488a7bc522ba7d19f, type: 3}
       propertyPath: m_RootOrder
       value: 4
