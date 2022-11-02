@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Player
+public class Player : MonoBehaviour
 {
     public int Hp;
     public int Speed;
