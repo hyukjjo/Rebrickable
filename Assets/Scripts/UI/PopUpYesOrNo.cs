@@ -10,7 +10,7 @@ public class PopUpYesOrNo : MonoBehaviour
 
     private void OnEnable()
     {
-        //
+        
     }
 
     private void OnDisable()
