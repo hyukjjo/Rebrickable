@@ -6,7 +6,7 @@ public class PopUpWarning : MonoBehaviour
 {
     private void OnEnable()
     {
-        //
+        
     }
 
     private void OnDisable()
