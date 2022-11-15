@@ -68,9 +68,9 @@ public class UIManager : Singleton<UIManager>
 
     public void HidePopUpYesOrNo()
     {
+        InputUnlock();
         _popUpYesOrNo.OnYesClicked = null;
         _popUpYesOrNo.OnNoClicked = null;
         _popUpYesOrNo.gameObject.SetActive(false);
-        InputUnlock();
     }
 }
