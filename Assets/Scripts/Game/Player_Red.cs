@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Player_Red : Player
 {
+    private float _moveSpeed = 0.001f;
+
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Player_Red Start");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetKey(KeyCode.UpArrow))
+            transform.Translate(Vector3.up * _moveSpeed, Space.World);
     }
 }
