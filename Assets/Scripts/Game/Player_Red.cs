@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Red : Player
+public class Player_Red : Player, IPlayerMove
 {
     private float _moveSpeed = 0.001f;
+
+    void IPlayerMove.PlayerMove()
+    {
+        throw new System.NotImplementedException();
+    }
 
     // Start is called before the first frame update
     void Start()
