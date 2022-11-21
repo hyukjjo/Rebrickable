@@ -21,5 +21,8 @@ public class Player_Black : Player, IPlayerMove
     {
         if (Input.GetKey(KeyCode.UpArrow))
             transform.Translate(Vector3.up * _moveSpeed, Space.World);
+
+        if (Input.GetKey(KeyCode.DownArrow))
+            transform.Translate(Vector3.down * _moveSpeed, Space.World);
     }
 }
