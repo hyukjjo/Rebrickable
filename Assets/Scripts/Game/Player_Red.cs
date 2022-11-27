@@ -24,5 +24,11 @@ public class Player_Red : Player, IPlayerMove
 
         if (Input.GetKey(KeyCode.DownArrow))
             transform.Translate(Vector3.down * _moveSpeed, Space.World);
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+            transform.Translate(Vector3.left * _moveSpeed, Space.World);
+
+        if (Input.GetKey(KeyCode.RightArrow))
+            transform.Translate(Vector3.right * _moveSpeed, Space.World);
     }
 }
