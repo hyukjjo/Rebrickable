@@ -6,6 +6,11 @@ public class Player_Black : Player, IPlayerMove
 {
     private float _moveSpeed = 0.001f;
 
+    public override void PlayerInit()
+    {
+        throw new System.NotImplementedException();
+    }
+
     void IPlayerMove.PlayerMove()
     {
         throw new System.NotImplementedException();
