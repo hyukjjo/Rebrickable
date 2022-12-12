@@ -5,25 +5,37 @@ using UnityEngine;
 public class ObjectPool : Singleton<ObjectPool>
 {
     [SerializeField]
-    private GameObject _poolingObjectPrefab;
-    private Queue<Item> _poolingObjectQueue = new Queue<Item>();
+    private GameObject _poolingItemPrefab;
+    [SerializeField]
+    private GameObject _poolingGoldPrefab;
+    private Queue<Item> _poolingItemQueue = new Queue<Item>();
+    private Queue<Gold> _poolingGoldQueue = new Queue<Gold>();
 
     private void Awake()
     {
-        Init(10);
+        InitItem(10);
+        InitGold(10);
     }
 
-    private void Init(int initCount)
+    private void InitItem(int initCount)
     {
         for (int i = 0; i < initCount; i++)
         {
-            _poolingObjectQueue.Enqueue(CreateNewItem());
+            _poolingItemQueue.Enqueue(CreateNewItem());
+        }
+    }
+
+    private void InitGold(int initCount)
+    {
+        for (int i = 0; i < initCount; i++)
+        {
+            _poolingGoldQueue.Enqueue((CreateNewGold()));
         }
     }
 
     private Item CreateNewItem()
     {
-        var newObj = Instantiate(_poolingObjectPrefab).GetComponent<Item>();
+        var newObj = Instantiate(_poolingItemPrefab).GetComponent<Item>();
         newObj.gameObject.SetActive(false);
         newObj.transform.SetParent(transform);
         return newObj;
@@ -31,9 +43,9 @@ public class ObjectPool : Singleton<ObjectPool>
 
     public static Item TakeItem()
     {
-        if (Instance._poolingObjectQueue.Count > 0)
+        if (Instance._poolingItemQueue.Count > 0)
         {
-            var obj = Instance._poolingObjectQueue.Dequeue();
+            var obj = Instance._poolingItemQueue.Dequeue();
             obj.transform.SetParent(null);
             obj.gameObject.SetActive(true);
             return obj;
@@ -51,6 +63,39 @@ public class ObjectPool : Singleton<ObjectPool>
     {
         obj.gameObject.SetActive(false);
         obj.transform.SetParent(Instance.transform);
-        Instance._poolingObjectQueue.Enqueue(obj);
+        Instance._poolingItemQueue.Enqueue(obj);
+    }
+
+    private Gold CreateNewGold()
+    {
+        var newObj = Instantiate(_poolingGoldPrefab).GetComponent<Gold>();
+        newObj.gameObject.SetActive(false);
+        newObj.transform.SetParent(transform);
+        return newObj;
+    }
+
+    public static Gold TakeGold()
+    {
+        if (Instance._poolingGoldQueue.Count > 0)
+        {
+            var obj = Instance._poolingGoldQueue.Dequeue();
+            obj.transform.SetParent(null);
+            obj.gameObject.SetActive(true);
+            return obj;
+        }
+        else
+        {
+            var newObj = Instance.CreateNewGold();
+            newObj.gameObject.SetActive(true);
+            newObj.transform.SetParent(null);
+            return newObj;
+        }
+    }
+
+    public static void ReturnGold(Gold obj)
+    {
+        obj.gameObject.SetActive(false);
+        obj.transform.SetParent(Instance.transform);
+        Instance._poolingGoldQueue.Enqueue(obj);
     }
 }
