@@ -8,7 +8,7 @@ public class Player_Red : Player, IPlayerMove
 
     public override void PlayerInit()
     {
-        throw new System.NotImplementedException();
+        base.PlayerInit();
     }
 
     void IPlayerMove.PlayerMove()
@@ -17,8 +17,9 @@ public class Player_Red : Player, IPlayerMove
     }
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        base.Start();
         Debug.Log("Player_Red Start");
 
         PlayerInit();
