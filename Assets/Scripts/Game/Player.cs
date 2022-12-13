@@ -10,16 +10,30 @@ public class Player : MonoBehaviour
     public int Def;
     public int Spd;
 
-    private float _colliderRadiusSize = 1.5f;
-
-    public virtual void PlayerInit()
-    {
-        var collider = gameObject.AddComponent<SphereCollider>();
-        collider.radius = _colliderRadiusSize;
-    }
+    private float _colliderRange = 3.0f;
+    private SphereCollider _collider;
 
     public virtual void Start()
     {
-        PlayerInit();
+        //PlayerInit();
+    }
+
+    public virtual void PlayerInit()
+    {
+        Debug.Log("Player Init!");
+        _collider = gameObject.AddComponent<SphereCollider>();
+        _collider.radius = _colliderRange * 0.5f;
+    }
+
+    public void UpgradeColliderRange(float value = 0f)
+    {
+        if(value == 0)
+        {
+            _collider.radius += 0.1f;
+        }
+        else
+        {
+            _collider.radius += value;
+        }
     }
 }
