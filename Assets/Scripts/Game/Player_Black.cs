@@ -9,6 +9,7 @@ public class Player_Black : Player, IPlayerMove
     public override void PlayerInit()
     {
         base.PlayerInit();
+        Debug.Log("Player_Black Init!");
     }
 
     void IPlayerMove.PlayerMove()
@@ -22,7 +23,7 @@ public class Player_Black : Player, IPlayerMove
         base.Start();
         Debug.Log("Player_Black Start");
 
-        PlayerInit();
+       // PlayerInit();
     }
 
     private void Update()

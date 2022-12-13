@@ -9,6 +9,7 @@ public class Player_Blue : Player, IPlayerMove
     public override void PlayerInit()
     {
         base.PlayerInit();
+        Debug.Log("Player_Blue Init!");
     }
 
     void IPlayerMove.PlayerMove()
