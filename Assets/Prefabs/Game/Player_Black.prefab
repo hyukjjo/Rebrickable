@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 0
-  Speed: 0
+  Dam: 0
+  Def: 0
+  Spd: 0
 --- !u!1 &6460613721353926400
 GameObject:
   m_ObjectHideFlags: 0
