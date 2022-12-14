@@ -12,7 +12,7 @@ public class Monster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("Monster!");
     }
 
     // Update is called once per frame
