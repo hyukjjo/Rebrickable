@@ -17,9 +17,9 @@ public class ObjectPool : Singleton<ObjectPool>
 
     private void Awake()
     {
-        InitItem(10);
-        InitGold(10);
-        InitMonster(20);
+        InitItem(30);
+        InitGold(30);
+        InitMonster(30);
     }
 
     private void InitMonster(int initCount)
