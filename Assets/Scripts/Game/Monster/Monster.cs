@@ -10,14 +10,21 @@ public class Monster : MonoBehaviour
     public int Spd;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
-        Debug.Log("Monster!");
+        // Monster CSV Data 가져와서 셋팅해주는 부분
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
-        
+        if(Hp <= 0)
+        {
+            Die();
+        }
+    }
+
+    public virtual void Die()
+    {
+
     }
 }
