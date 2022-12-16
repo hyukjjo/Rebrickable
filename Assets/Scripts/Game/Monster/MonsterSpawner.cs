@@ -21,7 +21,7 @@ public class MonsterSpawner : MonoBehaviour
         for(int i = 0; i < 10; i++)
         {
             var monster = ObjectPool.TakeMonster();
-            monster.transform.position = new Vector2(Random.Range(0, 25), Random.Range(0, 25));
+            monster.transform.position = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
         }
     }
 }
