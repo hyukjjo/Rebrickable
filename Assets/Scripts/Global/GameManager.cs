@@ -11,6 +11,11 @@ public class GameManager : Singleton<GameManager>
     private int _gold;
     private int _level;
 
+    private void Start()
+    {
+        Debug.Log("!!#");
+    }
+
     public void SaveGold(int gold)
     {
         _gold = gold;
