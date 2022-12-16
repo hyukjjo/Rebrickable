@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player_Red : Player, IPlayerMove
 {
-    private float _moveSpeed = 0.001f;
+    private float _moveSpeed = 0.01f;
 
     public override void PlayerInit()
     {
