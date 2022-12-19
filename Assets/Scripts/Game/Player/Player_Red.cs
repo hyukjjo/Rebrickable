@@ -23,7 +23,7 @@ public class Player_Red : Player, IPlayerMove
         base.Start();
         Debug.Log("Player_Red Start");
 
-        PlayerInit();
+      //  PlayerInit();
     }
 
     private void Update()
