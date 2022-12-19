@@ -10,9 +10,13 @@ public class Monster_Lv1 : Monster
         base.Start();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Die()
     {
-        
+        base.Die();
+    }
+
+    public override void OnTriggerEnter2D(Collider2D collision)
+    {
+        base.OnTriggerEnter2D(collision);
     }
 }
