@@ -17,14 +17,22 @@ public class Monster : MonoBehaviour
 
     public virtual void Update()
     {
-        if(Hp <= 0)
-        {
-            Die();
-        }
+        //if(Hp <= 0)
+        //{
+        //    Die();
+        //}
     }
 
     public virtual void Die()
     {
+        ObjectPool.ReturnMonster(this);
+    }
 
+    public virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Die();
+        }
     }
 }
