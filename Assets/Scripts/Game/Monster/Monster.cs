@@ -26,6 +26,7 @@ public class Monster : MonoBehaviour
     public virtual void Die()
     {
         ObjectPool.ReturnMonster(this);
+        ObjectPool.TakeGold().transform.position = transform.position;
     }
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
