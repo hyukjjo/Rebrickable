@@ -11,6 +11,7 @@ public class ObjectPool : Singleton<ObjectPool>
     private GameObject _poolingGoldPrefab;
     [SerializeField]
     private GameObject _poolingMonsterPrefab;
+
     private Queue<Item> _poolingItemQueue = new Queue<Item>();
     private Queue<Gold> _poolingGoldQueue = new Queue<Gold>();
     private Queue<Monster> _poolingMonsterQueue = new Queue<Monster>();
