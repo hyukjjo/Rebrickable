@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+public interface IPlayerUniqueSkill
+{
+    public void UsePlayerUniqueSkill();
+}
+
 public class Player : MonoBehaviour
 {
     public int Hp;
