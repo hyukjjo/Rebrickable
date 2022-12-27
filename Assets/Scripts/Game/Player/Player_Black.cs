@@ -2,19 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Black : Player, IPlayerMove
+public class Player_Black : Player, IPlayerUniqueSkill
 {
+    public GameObject UniqueSkillPrefab;
+
     private float _moveSpeed = 0.01f;
+
+    private Vector2 _mousePosition;
 
     public override void PlayerInit()
     {
         base.PlayerInit();
         Debug.Log("Player_Black Init!");
-    }
-
-    void IPlayerMove.PlayerMove()
-    {
-        throw new System.NotImplementedException();
     }
 
     // Start is called before the first frame update
@@ -23,7 +22,7 @@ public class Player_Black : Player, IPlayerMove
         base.Start();
         Debug.Log("Player_Black Start");
 
-       // PlayerInit();
+        InvokeRepeating(nameof(UsePlayerUniqueSkill), 0f, 0.5f);
     }
 
     private void Update()
@@ -39,5 +38,32 @@ public class Player_Black : Player, IPlayerMove
 
         if (Input.GetKey(KeyCode.RightArrow))
             transform.Translate(Vector3.right * _moveSpeed, Space.World);
+
+        _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    public void UsePlayerUniqueSkill()
+    {
+        StartCoroutine(PlayerSkillCoroutine());
+        
+    }
+
+    private IEnumerator PlayerSkillCoroutine()
+    {
+        float time = 1f;
+        float elapse = 0f;
+        Vector2 targetPosition = _mousePosition;
+
+        var skill = GameObject.Instantiate(UniqueSkillPrefab);
+        skill.transform.position = transform.position;
+
+        while (elapse <= time)
+        {
+            skill.transform.Translate(targetPosition * _moveSpeed, Space.World);
+            elapse += Time.deltaTime;
+            yield return null;
+        }
+
+        DestroyImmediate(skill);
     }
 }
