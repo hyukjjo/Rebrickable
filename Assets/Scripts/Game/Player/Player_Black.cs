@@ -39,7 +39,7 @@ public class Player_Black : Player, IPlayerUniqueSkill
         if (Input.GetKey(KeyCode.RightArrow))
             transform.Translate(Vector3.right * _moveSpeed, Space.World);
 
-        _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        _mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
     }
 
     public void UsePlayerUniqueSkill()
@@ -52,7 +52,7 @@ public class Player_Black : Player, IPlayerUniqueSkill
     {
         float time = 1f;
         float elapse = 0f;
-        Vector2 targetPosition = _mousePosition;
+        Vector3 targetPosition = _mousePosition;
 
         var skill = GameObject.Instantiate(UniqueSkillPrefab);
         skill.transform.position = transform.position;
