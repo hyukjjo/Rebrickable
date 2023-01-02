@@ -5,15 +5,15 @@ using System;
 
 public interface IPlayerUniqueSkill
 {
-    public void UsePlayerUniqueSkill();
+    public void ActiveSkills();
 }
 
 public class Player : MonoBehaviour
 {
-    public int Hp;
-    public int Dam;
-    public int Def;
-    public int Spd;
+    public float Hp;
+    public float Dam;
+    public float Def;
+    public float Spd;
 
     private float _colliderRange = 3.0f;
     private SphereCollider _collider;
