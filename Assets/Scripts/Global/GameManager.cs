@@ -7,6 +7,7 @@ public class GameManager : Singleton<GameManager>
 {
     public bool LoadSceneReady = false;
     public GameObject PlayerPrefab;
+    public GameObject currentPlayer;
 
     private int _gold;
     private int _level;
