@@ -50,8 +50,9 @@ MonoBehaviour:
   Hp: 0
   Dam: 0
   Def: 0
-  Spd: 0
-  UniqueSkillPrefab: {fileID: 2397025589941493331, guid: b79cd6c10d9785c458d7811e59173c21, type: 3}
+  Spd: 0.01
+  PlayerSkillList:
+  - {fileID: -7394808203094689810, guid: b79cd6c10d9785c458d7811e59173c21, type: 3}
 --- !u!61 &1013288005151283373
 BoxCollider2D:
   m_ObjectHideFlags: 0
