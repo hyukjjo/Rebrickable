@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class Player_Black : Player, IPlayerUniqueSkill
 {
-    public GameObject UniqueSkillPrefab;
-
-    private float _moveSpeed = 0.01f;
-
-    private Vector2 _mousePosition;
+    public List<PlayerSkill> PlayerSkillSlot = new List<PlayerSkill>();
+    private Vector3 _mousePosition;
 
     public override void PlayerInit()
     {
@@ -22,48 +19,33 @@ public class Player_Black : Player, IPlayerUniqueSkill
         base.Start();
         Debug.Log("Player_Black Start");
 
-        InvokeRepeating(nameof(UsePlayerUniqueSkill), 0f, 0.5f);
+        ActiveSkills();
     }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-            transform.Translate(Vector3.up * _moveSpeed, Space.World);
+        if (Input.GetKey(KeyCode.W))
+            transform.Translate(Vector3.up * Spd, Space.World);
 
-        if (Input.GetKey(KeyCode.DownArrow))
-            transform.Translate(Vector3.down * _moveSpeed, Space.World);
+        if (Input.GetKey(KeyCode.S))
+            transform.Translate(Vector3.down * Spd, Space.World);
 
-        if (Input.GetKey(KeyCode.LeftArrow))
-            transform.Translate(Vector3.left * _moveSpeed, Space.World);
+        if (Input.GetKey(KeyCode.A))
+            transform.Translate(Vector3.left * Spd, Space.World);
 
-        if (Input.GetKey(KeyCode.RightArrow))
-            transform.Translate(Vector3.right * _moveSpeed, Space.World);
+        if (Input.GetKey(KeyCode.D))
+            transform.Translate(Vector3.right * Spd, Space.World);
 
-        _mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
     }
 
-    public void UsePlayerUniqueSkill()
+    public void ActiveSkills()
     {
-        StartCoroutine(PlayerSkillCoroutine());
+        foreach (var item in PlayerSkillSlot)
+        {
+            GameObject.Instantiate<PlayerSkill>(item);
+        }
         
     }
 
-    private IEnumerator PlayerSkillCoroutine()
-    {
-        float time = 1f;
-        float elapse = 0f;
-        Vector3 targetPosition = _mousePosition;
-
-        var skill = GameObject.Instantiate(UniqueSkillPrefab);
-        skill.transform.position = transform.position;
-
-        while (elapse <= time)
-        {
-            skill.transform.Translate(targetPosition * _moveSpeed, Space.World);
-            elapse += Time.deltaTime;
-            yield return null;
-        }
-
-        DestroyImmediate(skill);
-    }
+    
 }
