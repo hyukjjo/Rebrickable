@@ -15,8 +15,13 @@ public class Monster_Lv1 : Monster
         base.Die();
     }
 
-    public override void OnTriggerEnter2D(Collider2D collision)
+    public override void HitByPlayerSkill(float dam)
     {
-        base.OnTriggerEnter2D(collision);
+        base.HitByPlayerSkill(dam);
     }
+
+    //public override void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    base.OnTriggerEnter2D(collision);
+    //}
 }
