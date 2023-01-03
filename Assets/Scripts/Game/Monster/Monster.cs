@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public int Hp;
-    public int Dam;
-    public int Def;
-    public int Spd;
+    public float Hp;
+    public float Dam;
+    public float Def;
+    public float Spd;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -17,10 +17,17 @@ public class Monster : MonoBehaviour
 
     public virtual void Update()
     {
-        //if(Hp <= 0)
-        //{
-        //    Die();
-        //}
+
+    }
+
+    public virtual void HitByPlayerSkill(float dam)
+    {
+        Hp -= dam;
+
+        if(Hp <= 0)
+        {
+            Die();
+        }
     }
 
     public virtual void Die()
@@ -28,12 +35,12 @@ public class Monster : MonoBehaviour
         ObjectPool.ReturnMonster(this);
         ObjectPool.TakeGold().transform.position = transform.position;
     }
-
-    public virtual void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("PlayerSkill"))
-        {
-            Die();
-        }
-    }
 }
+//    public virtual void OnTriggerEnter2D(Collider2D collision)
+//    {
+//        if (collision.gameObject.CompareTag("PlayerSkill"))
+//        {
+//            Die();
+//        }
+//    }
+//}
