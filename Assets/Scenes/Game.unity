@@ -222,6 +222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectPool
       objectReference: {fileID: 0}
+    - target: {fileID: 8595058482502480730, guid: 5af3303c687406b4590b6775f58d811e, type: 3}
+      propertyPath: _poolObjectDataList.Array.data[3].ObjectPrefab
+      value: 
+      objectReference: {fileID: 1866543178182490182, guid: bc734d42f82eebb4094de7be4cd12833, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af3303c687406b4590b6775f58d811e, type: 3}
 --- !u!1 &1206747735
