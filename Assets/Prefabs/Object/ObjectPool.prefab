@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3866883086799022188}
-  - component: {fileID: 3982889396756541490}
+  - component: {fileID: 8595058482502480730}
   m_Layer: 0
   m_Name: ObjectPool
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3982889396756541490
+--- !u!114 &8595058482502480730
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,9 +41,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 5935101564161583374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3b06f36ffb805549b934ff6948d8d3e, type: 3}
+  m_Script: {fileID: 11500000, guid: d0e9125cb79ae4d41899666f7d966035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolingItemPrefab: {fileID: 5153083138000851643, guid: aba50c212f8b7f945879d4ddd0861a07, type: 3}
-  _poolingGoldPrefab: {fileID: 1048500064492889664, guid: 77edff441e9f1b0438c423e531d3a7cb, type: 3}
-  _poolingMonsterPrefab: {fileID: 5948004591138641424, guid: 236c423d91eba12469f6a4bb12f31d57, type: 3}
+  _poolObjectDataList:
+  - Key: Item
+    ObjectPrefab: {fileID: 5153083138000851643, guid: aba50c212f8b7f945879d4ddd0861a07, type: 3}
+    InitialObjectCount: 5
+    MaxObjectCount: 10
+  - Key: Gold
+    ObjectPrefab: {fileID: 1048500064492889664, guid: 77edff441e9f1b0438c423e531d3a7cb, type: 3}
+    InitialObjectCount: 10
+    MaxObjectCount: 50
+  - Key: Monster_Lv1
+    ObjectPrefab: {fileID: 5948004591138641424, guid: 236c423d91eba12469f6a4bb12f31d57, type: 3}
+    InitialObjectCount: 5
+    MaxObjectCount: 10
+  - Key: PlayerSkill_Default_Black
+    ObjectPrefab: {fileID: 2397025589941493331, guid: b79cd6c10d9785c458d7811e59173c21, type: 3}
+    InitialObjectCount: 5
+    MaxObjectCount: 10
