@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2397025589941493359}
   - component: {fileID: 5528426639038654419}
   m_Layer: 0
-  m_Name: PlayerSkill_Unique_Black
+  m_Name: PlayerSkill_Default_Black
   m_TagString: PlayerSkill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36ea9ab2575b36449c3faeb7e5ef541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillPrefab: {fileID: 1866543178182490182, guid: bc734d42f82eebb4094de7be4cd12833, type: 3}
+  SkillPrefab: {fileID: 2195573515347506363, guid: bc734d42f82eebb4094de7be4cd12833, type: 3}
   IsDetroyedAfterCollision: 1
   RepeatRate: 0.5
   MoveSpeed: 0.05
