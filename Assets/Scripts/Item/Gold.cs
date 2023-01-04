@@ -20,7 +20,7 @@ public class Gold : MonoBehaviour
     {
         if(coll.CompareTag("Player"))
         {
-            ObjectPool.ReturnGold(this);
+            ObjectPoolManager.Instance.Despawn(GetComponent<PoolObject>());
         }
     }
 }
