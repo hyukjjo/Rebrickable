@@ -32,15 +32,7 @@ public class Monster : MonoBehaviour
 
     public virtual void Die()
     {
-        ObjectPool.ReturnMonster(this);
-        ObjectPool.TakeGold().transform.position = transform.position;
+        ObjectPoolManager.Instance.Despawn(GetComponent<PoolObject>());
+        ObjectPoolManager.Instance.Spawn("Gold").transform.position = transform.position;
     }
 }
-//    public virtual void OnTriggerEnter2D(Collider2D collision)
-//    {
-//        if (collision.gameObject.CompareTag("PlayerSkill"))
-//        {
-//            Die();
-//        }
-//    }
-//}
