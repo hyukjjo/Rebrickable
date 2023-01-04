@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerSkill_Default_Black : PlayerSkill
 {
+    private PoolObject skill;
+
     public override void Start()
     {
         base.Start();
@@ -21,7 +23,7 @@ public class PlayerSkill_Default_Black : PlayerSkill
         Vector3 targetPosition = _mousePosition - _playerPosition;
         Vector3 targetDirection = targetPosition / targetPosition.magnitude;
 
-        var skill = GameObject.Instantiate(SkillPrefab).GetComponent<PlayerSkillController>();
+        skill = ObjectPoolManager.Instance.Spawn("PlayerSkill_Default_Black");
 
         skill.transform.position = _playerPosition;
 
@@ -32,12 +34,22 @@ public class PlayerSkill_Default_Black : PlayerSkill
             yield return null;
         }
 
-        DestroyImmediate(skill);
+        StopSkill();
+    }
+
+    public override void UseSkill()
+    {
+        base.UseSkill();
     }
 
     public override void StopSkill()
     {
         base.StopSkill();
-        DestroyImmediate(skill);
+        ObjectPoolManager.Instance.Despawn(skill);
+    }
+
+    public override void OnTriggerEnter2D(Collider2D collision)
+    {
+        base.OnTriggerEnter2D(collision);
     }
 }
