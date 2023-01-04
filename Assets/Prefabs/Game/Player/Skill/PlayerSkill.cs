@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class PlayerSkill : MonoBehaviour
 {
-    public PlayerSkillController SkillPrefab;
     public bool IsDetroyedAfterCollision = true;
     public float RepeatRate;
     public float MoveSpeed;
@@ -17,11 +16,6 @@ public abstract class PlayerSkill : MonoBehaviour
     public virtual void Start()
     {
         InvokeRepeating(nameof(UseSkill), 0f, RepeatRate);
-
-        if(IsDetroyedAfterCollision == true)
-        {
-            SkillPrefab.OnHit.AddListener(StopSkill);
-        }
     }
 
     // Update is called once per frame
@@ -41,5 +35,19 @@ public abstract class PlayerSkill : MonoBehaviour
     public virtual void StopSkill()
     {
         StopCoroutine(PlayerSkillCoroutine());
+    }
+
+    public virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Monster"))
+        {
+            var monster = collision.GetComponent<Monster>();
+            monster.HitByPlayerSkill(Damage);
+
+            if (IsDetroyedAfterCollision == true)
+            {
+                StopSkill();
+            }
+        }
     }
 }
