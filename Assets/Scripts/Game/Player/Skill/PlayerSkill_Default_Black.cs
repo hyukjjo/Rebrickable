@@ -34,7 +34,7 @@ public class PlayerSkill_Default_Black : PlayerSkill
             yield return null;
         }
 
-        StopSkill();
+        ObjectPoolManager.Instance.Despawn(skill);
     }
 
     public override void UseSkill()
@@ -45,11 +45,6 @@ public class PlayerSkill_Default_Black : PlayerSkill
     public override void StopSkill()
     {
         base.StopSkill();
-        ObjectPoolManager.Instance.Despawn(skill);
-    }
-
-    public override void OnTriggerEnter2D(Collider2D collision)
-    {
-        base.OnTriggerEnter2D(collision);
+        //ObjectPoolManager.Instance.Despawn(skill);
     }
 }
