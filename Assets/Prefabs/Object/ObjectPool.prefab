@@ -57,7 +57,7 @@ MonoBehaviour:
     ObjectPrefab: {fileID: 5948004591138641424, guid: 236c423d91eba12469f6a4bb12f31d57, type: 3}
     InitialObjectCount: 5
     MaxObjectCount: 10
-  - Key: PlayerSkill_Default_Black
-    ObjectPrefab: {fileID: 2397025589941493331, guid: b79cd6c10d9785c458d7811e59173c21, type: 3}
+  - Key: PlayerSkill_Default_Black_Controller
+    ObjectPrefab: {fileID: 1866543178182490182, guid: bc734d42f82eebb4094de7be4cd12833, type: 3}
     InitialObjectCount: 5
     MaxObjectCount: 10
