@@ -44,10 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36ea9ab2575b36449c3faeb7e5ef541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillPrefab: {fileID: 2195573515347506363, guid: bc734d42f82eebb4094de7be4cd12833, type: 3}
+  _skill: {fileID: 7979976069208893068, guid: bc734d42f82eebb4094de7be4cd12833, type: 3}
   IsDetroyedAfterCollision: 1
   RepeatRate: 0.5
   MoveSpeed: 0.05
   Damage: 1
-  _mousePosition: {x: 0.1, y: 0.1, z: 0.1}
-  _playerPosition: {x: 0, y: 0, z: 0}
