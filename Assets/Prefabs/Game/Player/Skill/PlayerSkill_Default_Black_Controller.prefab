@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 1866543178182490232}
   - component: {fileID: 7076387058331199612}
   - component: {fileID: 8894429008625516441}
+  - component: {fileID: 7979976069208893068}
   m_Layer: 0
-  m_Name: PlayerSkill_Default_Black_Prefab
+  m_Name: PlayerSkill_Default_Black_Controller
   m_TagString: PlayerSkill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,3 +133,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7979976069208893068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866543178182490182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aaffaea0549f5c41a785550338731f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
