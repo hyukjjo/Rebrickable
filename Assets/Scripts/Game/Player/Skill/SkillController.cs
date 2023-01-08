@@ -19,7 +19,6 @@ public class SkillController : MonoBehaviour
         _cam = Camera.main;
         _player = GameManager.Instance.currentPlayer;
 
-        _coroutine = StartCoroutine(_skillCoroutine());
     }
 
     private void Update()
@@ -41,6 +40,8 @@ public class SkillController : MonoBehaviour
         _moveSpeed = spd;
         _damage = dam;
         _isDestroyedAfterCollision = bDestroyed;
+
+        //StartCoroutine(_skillCoroutine());
     }
 
     public void ResetSkill()
