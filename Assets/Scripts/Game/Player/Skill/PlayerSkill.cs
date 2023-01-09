@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class PlayerSkill : MonoBehaviour
+[System.Serializable]
+public class PlayerSkill : MonoBehaviour
 {
     [SerializeField]
     private SkillController _skill;
@@ -13,18 +14,18 @@ public abstract class PlayerSkill : MonoBehaviour
     public float Damage;
 
     // Start is called before the first frame update
-    public virtual void Start()
+    private void Start()
     {
         InvokeRepeating(nameof(UseSkill), 0f, RepeatRate);
     }
 
-    public virtual void UseSkill()
+    private void UseSkill()
     {
-        ObjectPoolManager.Instance.Spawn(_skill.name);
-        _skill.InitSkill(MoveSpeed, Damage, IsDetroyedAfterCollision);
+        var skill = ObjectPoolManager.Instance.Spawn(_skill.name);
+        skill.GetComponent<SkillController>().InitSkill(MoveSpeed, Damage, IsDetroyedAfterCollision);
     }
 
-    public virtual void StopSkill()
+    private void StopSkill()
     {
         
     }
