@@ -4,9 +4,9 @@ using UnityEngine.EventSystems;
 
 public class CharacterView : ContentView
 {
-    public override void InitView(Sprites sprites = null, Action onClick = null, Action onHovered = null)
+    public override void InitView(Sprites sprites = null, Content content = null, Action onClick = null, Action onHovered = null)
     {
-        base.InitView(sprites, onClick, onHovered);
+        base.InitView(sprites, null, onClick, onHovered);
     }
 
     public override void Disable()

@@ -16,7 +16,7 @@ public class ButtonPresenter : ContentPresenter
             foreach (var characterModels in _buttonModels)
             {
                 var view = Instantiate(_viewPrefab, _gridLayoutGroup).GetComponent<ButtonView>();
-                view.InitView(characterModels.Sprites, characterModels.OnClicked);
+                view.InitView(characterModels.Sprites, null, characterModels.OnClicked);
                 _buttonViewList.Add(view);
             }
         }
@@ -31,9 +31,9 @@ public class ButtonPresenter : ContentPresenter
 
     public override void OnDisable()
     {
-        foreach (var characterView in _buttonViewList)
+        foreach (var buttonView in _buttonViewList)
         {
-            characterView.Disable();
+            buttonView.Disable();
         }
     }
 }

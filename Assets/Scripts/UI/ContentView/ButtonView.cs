@@ -1,16 +1,23 @@
 using System;
 using Starter.ContentView;
+using TMPro;
 using UnityEngine.UI;
 
 public class ButtonView : ContentView
 {
-    [NonSerialized] private string _textID;
-    private Text _text;
+    private string _textID;
+    private TextMeshProUGUI _text;
 
-    public override void InitView(Sprites sprites = null, Action onClick = null, Action onHovered = null)
+    public override void InitView(Sprites sprites = null, Content content = null, Action onClick = null, Action onHovered = null)
     {
-        base.InitView(sprites, onClick, onHovered);
-        _text = GetComponentInChildren<Text>();
+        base.InitView(sprites, content, onClick, onHovered);
+        _text = GetComponentInChildren<TextMeshProUGUI>();
+
+        if (content != null)
+        {
+            _textID = content.TextKey;
+            _text.text = content.Text;
+        }
     }
 
     public override void Disable()

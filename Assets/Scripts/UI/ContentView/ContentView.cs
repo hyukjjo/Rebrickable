@@ -11,21 +11,30 @@ namespace Starter.ContentView
         [Serializable]
         public class Sprites
         {
-            public Sprite normalSprite;
-            public Sprite hoverSprite;
+            public Sprite NormalSprite;
+            public Sprite HoverSprite;
+        }
+
+        [Serializable]
+        public class Content
+        {
+            public string TextKey;
+            public string Text;
         }
 
         [SerializeField] private Image _image;
         [SerializeField] private Sprites _sprites;
+        [SerializeField] private Content _content;
         private Action _onClicked;
         private Action _onHovered;
 
-        public virtual void InitView(Sprites sprites = null, Action onClick = null, Action onHovered = null)
+        public virtual void InitView(Sprites sprites = null, Content content = null, Action onClick = null, Action onHovered = null)
         {
+            _content = content;
             _onClicked = onClick;
             _onHovered = onHovered;
             _sprites = sprites ?? _sprites;
-            _image.sprite = _sprites.normalSprite;
+            _image.sprite = _sprites.NormalSprite;
         }
 
         public virtual void ResetView()
