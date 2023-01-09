@@ -10,21 +10,12 @@ public class SkillController : MonoBehaviour
 
     private Camera _cam;
     private GameObject _player;
-    private Vector3 _mousePosition = new Vector3(0.1f, 0.1f, 0.1f);
-    private Vector3 _playerPosition;
     private Coroutine _coroutine;
 
-    private void Start()
+    private void Awake()
     {
         _cam = Camera.main;
         _player = GameManager.Instance.currentPlayer;
-
-    }
-
-    private void Update()
-    {
-        _mousePosition = _cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
-        _playerPosition = _player.transform.position;
     }
 
     private void OnDisable()
@@ -41,7 +32,12 @@ public class SkillController : MonoBehaviour
         _damage = dam;
         _isDestroyedAfterCollision = bDestroyed;
 
-        //StartCoroutine(_skillCoroutine());
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+        }
+
+        _coroutine = StartCoroutine(_skillCoroutine());
     }
 
     public void ResetSkill()
@@ -53,10 +49,14 @@ public class SkillController : MonoBehaviour
     {
         float time = 1f;
         float elapse = 0f;
-        Vector3 targetPosition = _mousePosition - _playerPosition;
+
+        var mousePosition = _cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
+        var playerPosition = _player.transform.position;
+
+        Vector3 targetPosition = mousePosition - playerPosition;
         Vector3 targetDirection = targetPosition / targetPosition.magnitude;
 
-        transform.position = _playerPosition;
+        transform.position = playerPosition;
 
         while (elapse <= time)
         {
