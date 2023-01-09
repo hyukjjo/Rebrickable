@@ -52,7 +52,7 @@ MonoBehaviour:
   Def: 0
   Spd: 0.01
   PlayerSkillSlot:
-  - {fileID: 5528426639038654419, guid: b79cd6c10d9785c458d7811e59173c21, type: 3}
+  - {fileID: 0}
 --- !u!61 &1013288005151283373
 BoxCollider2D:
   m_ObjectHideFlags: 0
