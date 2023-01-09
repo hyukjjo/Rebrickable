@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Black : Player, IPlayerUniqueSkill
+public class Player_Black : Player
 {
-    public List<PlayerSkill> PlayerSkillSlot = new List<PlayerSkill>();
-    private Vector3 _mousePosition;
-
     public override void PlayerInit()
     {
         base.PlayerInit();
@@ -19,7 +16,7 @@ public class Player_Black : Player, IPlayerUniqueSkill
         base.Start();
         Debug.Log("Player_Black Start");
 
-        ActiveSkills();
+        PlayerSkillManager.Instance.ActivePlayerSkills();
     }
 
     private void Update()
@@ -35,17 +32,5 @@ public class Player_Black : Player, IPlayerUniqueSkill
 
         if (Input.GetKey(KeyCode.D))
             transform.Translate(Vector3.right * Spd, Space.World);
-
     }
-
-    public void ActiveSkills()
-    {
-        foreach (var item in PlayerSkillSlot)
-        {
-            GameObject.Instantiate<PlayerSkill>(item);
-        }
-        
-    }
-
-    
 }
