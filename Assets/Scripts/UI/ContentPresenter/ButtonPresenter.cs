@@ -16,7 +16,7 @@ public class ButtonPresenter : ContentPresenter
             foreach (var characterModels in _buttonModels)
             {
                 var view = Instantiate(_viewPrefab, _gridLayoutGroup).GetComponent<ButtonView>();
-                view.InitView(characterModels.Sprites, null, characterModels.OnClicked);
+                view.InitView(characterModels.Sprites, characterModels.Content, characterModels.OnClicked);
                 _buttonViewList.Add(view);
             }
         }

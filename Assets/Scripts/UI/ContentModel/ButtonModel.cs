@@ -7,8 +7,9 @@ using Starter.ContentModel;
 public class ButtonModel : ContentModel
 {
     [SerializeField] private ContentView.Sprites _sprites;
-    [SerializeField] private string _contentString;
+    [SerializeField] private ContentView.Content _content;
 
     public ContentView.Sprites Sprites => _sprites;
+    public ContentView.Content Content => _content;
 }
 
