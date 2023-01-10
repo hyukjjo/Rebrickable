@@ -119,12 +119,18 @@ MonoBehaviour:
       _scenePath: Assets/Scenes/Game.unity
     _nextContentPresenterPrefab: {fileID: 0}
     _sprites:
-      normalSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-      hoverSprite: {fileID: 0}
+      NormalSprite: {fileID: 0}
+      HoverSprite: {fileID: 0}
+    _content:
+      TextKey: 
+      Text: JOIN
   - _selectionActionType: 2
     _sceneToLoad:
       _scenePath: 
     _nextContentPresenterPrefab: {fileID: 0}
     _sprites:
-      normalSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-      hoverSprite: {fileID: 0}
+      NormalSprite: {fileID: 0}
+      HoverSprite: {fileID: 0}
+    _content:
+      TextKey: 
+      Text: EXIT
