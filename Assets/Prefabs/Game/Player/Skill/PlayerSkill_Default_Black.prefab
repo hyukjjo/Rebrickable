@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6497cf3793257964b9cef95ffb160252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skill: {fileID: 7979976069208893068, guid: bc734d42f82eebb4094de7be4cd12833, type: 3}
-  IsDetroyedAfterCollision: 1
-  RepeatRate: 0.5
-  MoveSpeed: 0.05
-  Damage: 1
+  _skill: {fileID: 3654808766075244342, guid: bc734d42f82eebb4094de7be4cd12833, type: 3}
+  _playerSkillData:
+    IsDetroyedAfterCollision: 1
+    RepeatRate: 0.5
+    MoveSpeed: 0.05
+    Damage: 1

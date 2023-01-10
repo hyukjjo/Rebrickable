@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1866543178182490232}
   - component: {fileID: 7076387058331199612}
   - component: {fileID: 8894429008625516441}
-  - component: {fileID: 7979976069208893068}
+  - component: {fileID: 3654808766075244342}
   m_Layer: 0
   m_Name: PlayerSkill_Default_Black_Controller
   m_TagString: PlayerSkill
@@ -133,7 +133,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7979976069208893068
+--- !u!114 &3654808766075244342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,6 +142,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1866543178182490182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aaffaea0549f5c41a785550338731f7, type: 3}
+  m_Script: {fileID: 11500000, guid: e746187d598419a43bd69a543575465b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerSkillData:
+    IsDetroyedAfterCollision: 1
+    RepeatRate: 0
+    MoveSpeed: 0
+    Damage: 0
+  _cam: {fileID: 0}
+  _player: {fileID: 0}
