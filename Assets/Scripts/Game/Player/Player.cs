@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
 
     private float _colliderRange = 3.0f;
     private SphereCollider _collider;
+    private int _gainedGold = 0;
+    private int _gainedExp = 0;
 
     public virtual void Start()
     {
@@ -40,5 +42,20 @@ public class Player : MonoBehaviour
         {
             _collider.radius += value;
         }
+    }
+
+    public void GainGold(int value)
+    {
+        _gainedGold += value;
+    }
+
+    public void GainExp(int value)
+    {
+        _gainedExp += value;
+    }
+
+    private void OnApplicationQuit()
+    {
+        GameManager.Instance.SaveDataAndExitGame(_gainedGold, _gainedExp);
     }
 }
