@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Gold : MonoBehaviour
 {
+    [SerializeField]
+    private int _value = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,7 @@ public class Gold : MonoBehaviour
     {
         if(coll.CompareTag("Player"))
         {
+            coll.GetComponent<Player>().GainGold(_value);
             ObjectPoolManager.Instance.Despawn(GetComponent<PoolObject>());
         }
     }
