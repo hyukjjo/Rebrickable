@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterSpawner : MonoBehaviour
+public class MonsterSpawner : Singleton<MonsterSpawner>
 {
     // Start is called before the first frame update
     void Start()                                           
@@ -20,8 +20,13 @@ public class MonsterSpawner : MonoBehaviour
     {                              
         for(int i = 0; i < 10; i++)
         {
-            var monster = ObjectPoolManager.Instance.Spawn("Monster_Lv1");
-            monster.transform.position = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
+            SpawnMonster();
         }
+    }
+
+    public void SpawnMonster()
+    {
+        var monster = ObjectPoolManager.Instance.Spawn("Monster_Lv1");
+        monster.transform.position = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
     }
 }
