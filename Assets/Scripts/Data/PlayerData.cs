@@ -8,7 +8,7 @@ using System.IO;
 public class PlayerData
 {
     public int _gold = 0;
-    public int _level = 0;
+    public int _exp = 0;
 
     public static PlayerData GetPlayerData()
     {
