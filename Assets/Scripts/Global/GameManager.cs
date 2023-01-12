@@ -18,6 +18,17 @@ public class GameManager : Singleton<GameManager>
     {
         Debug.Log("Save data and exit this game.");
 
-        PlayerData.SetPlayerData(new PlayerData() {_gold = gold, _level = exp });
+        if (gold == 0 && exp == 0)
+        {
+            return;
+        }
+        else
+        {
+            PlayerData.SetPlayerData(new PlayerData() 
+            { 
+                _gold = gold + PlayerData.GetPlayerData()._gold,
+                _exp = exp + PlayerData.GetPlayerData()._exp 
+            });
+        }
     }
 }
