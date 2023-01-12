@@ -43,7 +43,7 @@ namespace Starter.ContentModel
                     }
                     break;
                 case SelectionActionType.Quit:
-                    UIManager.Instance.ShowPopUpYesOrNo(()=> GameManager.Instance.SaveDataAndExitGame(), null);
+                    UIManager.Instance.ShowPopUpYesOrNo(() => GameManager.Instance.SaveDataAndExitGame(), null);
                     break;
                 case SelectionActionType.SelectCharacter:
                     GameManager.Instance.LoadSceneReady = true;
