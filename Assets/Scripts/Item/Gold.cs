@@ -19,11 +19,11 @@ public class Gold : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D coll)
+    private void OnCollisionEnter2D(Collision2D coll)
     {
-        if(coll.CompareTag("Player"))
+        if (coll.gameObject.CompareTag("Player"))
         {
-            coll.GetComponent<Player>().GainGold(_value);
+            coll.gameObject.GetComponent<Player>().GainGold(_value);
             ObjectPoolManager.Instance.Despawn(GetComponent<PoolObject>());
         }
     }
