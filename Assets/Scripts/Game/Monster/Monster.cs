@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Monster : MonoBehaviour
 {
@@ -10,12 +11,16 @@ public class Monster : MonoBehaviour
     public float Spd;
 
     private GameObject _player;
+    [SerializeField]
+    private Image _hpImage;
+    private float _totalHp;
 
     // Start is called before the first frame update
     public virtual void Start()
     {
-        // Monster CSV Data °¡Á®¿Í¼­ ¼ÂÆÃÇØÁÖ´Â ºÎºÐ
+        // Monster CSV Data ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Îºï¿½
         _player = GameManager.Instance.currentPlayer;
+        _totalHp = Hp;
     }
 
     public virtual void Update()
@@ -32,9 +37,12 @@ public class Monster : MonoBehaviour
     public virtual void HitByPlayerSkill(float dam)
     {
         Hp -= dam;
+        _hpImage.fillAmount = Hp / _totalHp;
 
         if(Hp <= 0)
         {
+            Hp = _totalHp;
+            _hpImage.fillAmount = 1f;
             Die();
         }
     }
