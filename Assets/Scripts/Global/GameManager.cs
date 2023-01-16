@@ -11,7 +11,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
-        Debug.Log("!!#");
+        //Debug.Log("!!#");
     }
 
     public void SaveDataAndExitGame(int gold = 0, int exp = 0)
