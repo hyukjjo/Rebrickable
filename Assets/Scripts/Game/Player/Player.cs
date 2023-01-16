@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public interface IPlayerUniqueSkill
 {
@@ -15,10 +16,13 @@ public class Player : MonoBehaviour
     public float Def;
     public float Spd;
 
+    [SerializeField]
+    private Image _hpImage;
     private float _colliderRange = 3.0f;
     private SphereCollider _collider;
     private int _gainedGold = 0;
     private int _gainedExp = 0;
+    private float _totalHp;
 
     public virtual void Start()
     {
@@ -30,6 +34,7 @@ public class Player : MonoBehaviour
         Debug.Log("Player Init!");
         _collider = gameObject.AddComponent<SphereCollider>();
         _collider.radius = _colliderRange * 0.5f;
+        _totalHp = Hp;
     }
 
     public void UpgradeColliderRange(float value = 0f)
@@ -42,6 +47,22 @@ public class Player : MonoBehaviour
         {
             _collider.radius += value;
         }
+    }
+
+    public virtual void HitByPlayerMonster(float dam)
+    {
+        Hp -= dam;
+        _hpImage.fillAmount = Hp / _totalHp;
+
+        if (Hp <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        throw new NotImplementedException();
     }
 
     public void GainGold(int value)
