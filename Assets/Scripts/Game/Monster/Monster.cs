@@ -41,8 +41,7 @@ public class Monster : MonoBehaviour
 
         if(Hp <= 0)
         {
-            Hp = _totalHp;
-            _hpImage.fillAmount = 1f;
+            ResetMonster();
             Die();
         }
     }
@@ -52,5 +51,11 @@ public class Monster : MonoBehaviour
         ObjectPoolManager.Instance.Despawn(GetComponent<PoolObject>());
         ObjectPoolManager.Instance.Spawn("Gold").transform.position = transform.position;
         MonsterSpawner.Instance.SpawnMonster();
+    }
+
+    private void ResetMonster()
+    {
+        Hp = _totalHp;
+        _hpImage.fillAmount = 1f;
     }
 }
