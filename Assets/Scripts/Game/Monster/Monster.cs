@@ -58,4 +58,13 @@ public class Monster : MonoBehaviour
         Hp = _totalHp;
         _hpImage.fillAmount = 1f;
     }
+
+    public virtual void OnCollisionEnter2D(Collision2D coll)
+    {
+        if(coll.gameObject.CompareTag("Player"))
+        {
+            var player = coll.gameObject.GetComponent<Player>();
+            player.HitByPlayerMonster(Dam);
+        }
+    }
 }
