@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 10
-  Dam: 0
+  Dam: 0.01
   Def: 0
   Spd: 0.5
   _hpImage: {fileID: 6312416911370486827}
