@@ -51,6 +51,7 @@ MonoBehaviour:
   Dam: 0
   Def: 0
   Spd: 0.01
+  _hpImage: {fileID: 6699340788273706138}
 --- !u!61 &1013288005151283373
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -288,7 +289,7 @@ GameObject:
   - component: {fileID: 2047563393290645983}
   - component: {fileID: 2379215880963978099}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Image_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
