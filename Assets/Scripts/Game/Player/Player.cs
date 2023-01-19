@@ -19,21 +19,20 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Image _hpImage;
     private float _colliderRange = 3.0f;
-    private SphereCollider _collider;
+    private Collider2D _collider;
     private int _gainedGold = 0;
     private int _gainedExp = 0;
     private float _totalHp;
 
     public virtual void Start()
     {
-        //PlayerInit();
+        PlayerInit();
     }
 
     public virtual void PlayerInit()
     {
         Debug.Log("Player Init!");
-        _collider = gameObject.AddComponent<SphereCollider>();
-        _collider.radius = _colliderRange * 0.5f;
+        _collider = GetComponent<Collider2D>();
         _totalHp = Hp;
     }
 
@@ -41,11 +40,11 @@ public class Player : MonoBehaviour
     {
         if(value == 0)
         {
-            _collider.radius += 0.1f;
+            //_collider. radius += 0.1f;
         }
         else
         {
-            _collider.radius += value;
+            //_collider.radius += value;
         }
     }
 
