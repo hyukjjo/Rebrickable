@@ -59,7 +59,7 @@ public class Monster : MonoBehaviour
         _hpImage.fillAmount = 1f;
     }
 
-    public virtual void OnCollisionEnter2D(Collision2D coll)
+    public virtual void OnCollisionStay2D(Collision2D coll)
     {
         if(coll.gameObject.CompareTag("Player"))
         {
