@@ -203,6 +203,7 @@ MonoBehaviour:
   Dam: 0.01
   Def: 0
   Spd: 0.5
+  Exp: 10
   _hpImage: {fileID: 6312416911370486827}
 --- !u!61 &6165985068037607572
 BoxCollider2D:
