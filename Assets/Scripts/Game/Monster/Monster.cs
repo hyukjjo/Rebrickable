@@ -9,8 +9,9 @@ public class Monster : MonoBehaviour
     public float Dam;
     public float Def;
     public float Spd;
+    public int Exp;
 
-    private GameObject _player;
+    private Player _player;
     [SerializeField]
     private Image _hpImage;
     private float _totalHp;
@@ -19,7 +20,7 @@ public class Monster : MonoBehaviour
     public virtual void Start()
     {
         // Monster CSV Data �����ͼ� �������ִ� �κ�
-        _player = GameManager.Instance.currentPlayer;
+        _player = GameManager.Instance.currentPlayer.GetComponent<Player>();
         _totalHp = Hp;
     }
 
@@ -48,6 +49,7 @@ public class Monster : MonoBehaviour
 
     public virtual void Die()
     {
+        _player.GainExp(Exp);
         ObjectPoolManager.Instance.Despawn(GetComponent<PoolObject>());
         ObjectPoolManager.Instance.Spawn("Gold").transform.position = transform.position;
         MonsterSpawner.Instance.SpawnMonster();
@@ -62,9 +64,8 @@ public class Monster : MonoBehaviour
     public virtual void OnCollisionStay2D(Collision2D coll)
     {
         if(coll.gameObject.CompareTag("Player"))
-        {
-            var player = coll.gameObject.GetComponent<Player>();
-            player.HitByPlayerMonster(Dam);
+        { 
+            _player.HitByPlayerMonster(Dam);
         }
     }
 }
