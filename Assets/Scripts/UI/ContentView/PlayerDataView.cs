@@ -11,7 +11,15 @@ public class PlayerDataView : ContentView
     {
         base.InitView(sprites, content, onClick, onHovered);
         _text = GetComponentInChildren<TextMeshProUGUI>();
-        _text.text = PlayerData.GetPlayerData()._gold.ToString();
+
+        if (sprites.NormalSprite.name.Equals("coin"))
+        {
+            _text.text = PlayerData.GetPlayerData()._gold.ToString();
+        }
+        else if(sprites.NormalSprite.name.Equals("xp"))
+        {
+            _text.text = PlayerData.GetPlayerData()._exp.ToString();
+        }
     }
 
     public override void Disable()
