@@ -6,11 +6,12 @@ public class Gold : MonoBehaviour
 {
     [SerializeField]
     private int _value = 0;
+    private Player _player;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _player = GameManager.Instance.currentPlayer.GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -23,7 +24,7 @@ public class Gold : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Player"))
         {
-            coll.gameObject.GetComponent<Player>().GainGold(_value);
+            _player.GainGold(_value);
             ObjectPoolManager.Instance.Despawn(GetComponent<PoolObject>());
         }
     }
