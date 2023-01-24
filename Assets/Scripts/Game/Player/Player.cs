@@ -38,14 +38,14 @@ public class Player : MonoBehaviour
 
     public void UpgradeColliderRange(float value = 0f)
     {
-        if(value == 0)
-        {
-            //_collider. radius += 0.1f;
-        }
-        else
-        {
-            //_collider.radius += value;
-        }
+        //if (value == 0)
+        //{
+        //    _collider.radius += 0.1f;
+        //}
+        //else
+        //{
+        //    _collider.radius += value;
+        //}
     }
 
     public virtual void HitByPlayerMonster(float dam)
