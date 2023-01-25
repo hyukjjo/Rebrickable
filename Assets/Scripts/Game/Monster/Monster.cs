@@ -20,7 +20,7 @@ public class Monster : MonoBehaviour
     public virtual void Start()
     {
         // Monster CSV Data �����ͼ� �������ִ� �κ�
-        _player = GameManager.Instance.currentPlayer.GetComponent<Player>();
+        _player = GameManager.Instance.GetPlayer();
         _totalHp = Hp;
     }
 
