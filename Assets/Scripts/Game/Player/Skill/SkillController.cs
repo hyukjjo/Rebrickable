@@ -16,7 +16,7 @@ public abstract class SkillController : MonoBehaviour
     public virtual void Awake()
     {
         _cam = Camera.main;
-        _player = GameManager.Instance.currentPlayer;
+        _player = GameManager.Instance.GetPlayer().gameObject;
     }
 
     public virtual void OnDisable()
