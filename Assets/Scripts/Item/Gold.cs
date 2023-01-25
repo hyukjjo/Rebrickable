@@ -11,7 +11,7 @@ public class Gold : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _player = GameManager.Instance.currentPlayer.GetComponent<Player>();
+        _player = GameManager.Instance.GetPlayer();
     }
 
     // Update is called once per frame
