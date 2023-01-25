@@ -5,13 +5,21 @@ using Utility;
 
 public class GameManager : Singleton<GameManager>
 {
+    [HideInInspector]
     public bool LoadSceneReady = false;
+    [HideInInspector]
     public GameObject PlayerPrefab;
-    public GameObject currentPlayer;
 
-    private void Start()
+    private Player currentPlayer;
+
+    public void SetPlayer(Player player)
     {
-        //Debug.Log("!!#");
+        currentPlayer = player;
+    }
+
+    public Player GetPlayer()
+    {
+        return currentPlayer;
     }
 
     public void SaveDataAndExitGame(int gold = 0, int exp = 0)
@@ -24,10 +32,10 @@ public class GameManager : Singleton<GameManager>
         }
         else
         {
-            PlayerData.SetPlayerData(new PlayerData() 
-            { 
+            PlayerData.SetPlayerData(new PlayerData()
+            {
                 _gold = gold + PlayerData.GetPlayerData()._gold,
-                _exp = exp + PlayerData.GetPlayerData()._exp 
+                _exp = exp + PlayerData.GetPlayerData()._exp
             });
         }
     }
