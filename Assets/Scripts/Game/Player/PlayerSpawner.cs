@@ -25,7 +25,7 @@ public class PlayerSpawner : MonoBehaviour
     public void SpawnPlayer()
     {
         var player = Instantiate(GameManager.Instance.PlayerPrefab, transform.position, Quaternion.identity);
-        GameManager.Instance.currentPlayer = player;
+        GameManager.Instance.SetPlayer(player.GetComponent<Player>());
         PlayerCam.Instance.SetPlayerCam(player);
     }
 }
