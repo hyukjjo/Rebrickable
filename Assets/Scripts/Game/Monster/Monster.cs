@@ -14,6 +14,8 @@ public class Monster : MonoBehaviour
     private Player _player;
     [SerializeField]
     private Image _hpImage;
+    [SerializeField]
+    private Text _damageText;
     private float _totalHp;
 
     // Start is called before the first frame update
