@@ -222,6 +222,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectPool
       objectReference: {fileID: 0}
+    - target: {fileID: 8595058482502480730, guid: 5af3303c687406b4590b6775f58d811e, type: 3}
+      propertyPath: _poolObjectDataList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595058482502480730, guid: 5af3303c687406b4590b6775f58d811e, type: 3}
+      propertyPath: _poolObjectDataList.Array.data[0].Key
+      value: Gold
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595058482502480730, guid: 5af3303c687406b4590b6775f58d811e, type: 3}
+      propertyPath: _poolObjectDataList.Array.data[1].Key
+      value: Monster_Lv1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595058482502480730, guid: 5af3303c687406b4590b6775f58d811e, type: 3}
+      propertyPath: _poolObjectDataList.Array.data[2].Key
+      value: PlayerSkill_Default_Black_Controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595058482502480730, guid: 5af3303c687406b4590b6775f58d811e, type: 3}
+      propertyPath: _poolObjectDataList.Array.data[0].ObjectPrefab
+      value: 
+      objectReference: {fileID: 1048500064492889664, guid: 77edff441e9f1b0438c423e531d3a7cb, type: 3}
+    - target: {fileID: 8595058482502480730, guid: 5af3303c687406b4590b6775f58d811e, type: 3}
+      propertyPath: _poolObjectDataList.Array.data[1].ObjectPrefab
+      value: 
+      objectReference: {fileID: 5948004591138641424, guid: 236c423d91eba12469f6a4bb12f31d57, type: 3}
+    - target: {fileID: 8595058482502480730, guid: 5af3303c687406b4590b6775f58d811e, type: 3}
+      propertyPath: _poolObjectDataList.Array.data[2].ObjectPrefab
+      value: 
+      objectReference: {fileID: 1866543178182490182, guid: bc734d42f82eebb4094de7be4cd12833, type: 3}
+    - target: {fileID: 8595058482502480730, guid: 5af3303c687406b4590b6775f58d811e, type: 3}
+      propertyPath: _poolObjectDataList.Array.data[0].MaxObjectCount
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595058482502480730, guid: 5af3303c687406b4590b6775f58d811e, type: 3}
+      propertyPath: _poolObjectDataList.Array.data[1].MaxObjectCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595058482502480730, guid: 5af3303c687406b4590b6775f58d811e, type: 3}
+      propertyPath: _poolObjectDataList.Array.data[0].InitialObjectCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595058482502480730, guid: 5af3303c687406b4590b6775f58d811e, type: 3}
+      propertyPath: _poolObjectDataList.Array.data[1].InitialObjectCount
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af3303c687406b4590b6775f58d811e, type: 3}
 --- !u!1 &1206747735
