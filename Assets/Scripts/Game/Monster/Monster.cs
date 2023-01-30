@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class Monster : MonoBehaviour
 {
@@ -15,10 +14,8 @@ public class Monster : MonoBehaviour
     private Player _player;
     [SerializeField]
     private Image _hpImage;
-    [SerializeField]
-    private TextMeshProUGUI _damageText;
+   
     private float _totalHp;
-    private Animator _animator;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -26,7 +23,6 @@ public class Monster : MonoBehaviour
         // Monster CSV Data �����ͼ� �������ִ� �κ�
         _player = GameManager.Instance.GetPlayer();
         _totalHp = Hp;
-        _animator = GetComponent<Animator>();
     }
 
     public virtual void Update()
@@ -44,11 +40,13 @@ public class Monster : MonoBehaviour
     {
         Hp -= dam;
         _hpImage.fillAmount = Hp / _totalHp;
-        _animator.SetTrigger("Hit");
-        _damageText.text = dam.ToString();
+
+        var txt = ObjectPoolManager.Instance.Spawn("DamageText");
+        txt.GetComponent<DamageText>().ShowText(dam, transform);
 
         if (Hp <= 0)
         {
+            txt.GetComponentInChildren<DamageText>(true).HideText();
             ResetMonster();
             Die();
         }
@@ -72,7 +70,7 @@ public class Monster : MonoBehaviour
     {
         if(coll.gameObject.CompareTag("Player"))
         { 
-            _player.HitByPlayerMonster(Dam);
+            _player.HitByMonster(Dam);
         }
     }
 }
