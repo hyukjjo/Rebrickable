@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
         //}
     }
 
-    public virtual void HitByPlayerMonster(float dam)
+    public virtual void HitByMonster(float dam)
     {
         Hp -= dam;
         _hpImage.fillAmount = Hp / _totalHp;
