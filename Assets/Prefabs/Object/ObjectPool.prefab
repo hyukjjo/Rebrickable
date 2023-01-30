@@ -45,10 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poolObjectDataList:
-  - Key: Item
-    ObjectPrefab: {fileID: 5153083138000851643, guid: aba50c212f8b7f945879d4ddd0861a07, type: 3}
-    InitialObjectCount: 5
-    MaxObjectCount: 10
   - Key: Gold
     ObjectPrefab: {fileID: 1048500064492889664, guid: 77edff441e9f1b0438c423e531d3a7cb, type: 3}
     InitialObjectCount: 10
@@ -61,3 +57,7 @@ MonoBehaviour:
     ObjectPrefab: {fileID: 1866543178182490182, guid: bc734d42f82eebb4094de7be4cd12833, type: 3}
     InitialObjectCount: 5
     MaxObjectCount: 10
+  - Key: DamageText
+    ObjectPrefab: {fileID: 1443737636893001695, guid: cde2c3651b144b340bb6db50c44cc96f, type: 3}
+    InitialObjectCount: 10
+    MaxObjectCount: 30
