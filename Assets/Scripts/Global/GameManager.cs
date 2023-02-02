@@ -12,6 +12,21 @@ public class GameManager : Singleton<GameManager>
 
     private Player currentPlayer;
 
+    public void KillAllMonstersInField()
+    {
+
+    }
+
+    public void PlayerSpeedUp()
+    {
+
+    }
+
+    public void PlayerMagnetRangeUp()
+    {
+
+    }
+
     public void SetPlayer(Player player)
     {
         currentPlayer = player;
