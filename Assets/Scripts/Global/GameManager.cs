@@ -22,7 +22,7 @@ public class GameManager : Singleton<GameManager>
 
     }
 
-    public void PlayerMagnetRangeUp()
+    public void PlayerMagnetUp()
     {
 
     }
