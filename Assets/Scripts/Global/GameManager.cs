@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Utility;
 
+[System.Serializable]
+public class ProbabilityData
+{
+
+}
+
 public class GameManager : Singleton<GameManager>
 {
     [HideInInspector]
@@ -14,17 +20,17 @@ public class GameManager : Singleton<GameManager>
 
     public void KillAllMonstersInField()
     {
-
+        Debug.Log("Kill All Monsters!!");
     }
 
     public void PlayerSpeedUp()
     {
-
+        Debug.Log("Player Speed Level Up!!");
     }
 
     public void PlayerMagnetUp()
     {
-
+        Debug.Log("Player Magnet Level Up!!");
     }
 
     public void SetPlayer(Player player)
