@@ -21,6 +21,7 @@ public class FieldItemData
 public class FieldItem : MonoBehaviour
 {
     private Image _image;
+
     public FieldItemData CurrentData;
 
     public List<FieldItemData> FieldItemDataList = new List<FieldItemData>();
