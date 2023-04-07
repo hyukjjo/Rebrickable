@@ -57,7 +57,7 @@ public class Monster : MonoBehaviour
         _player.GainExp(Exp);
         ObjectPoolManager.Instance.Despawn(GetComponent<PoolObject>());
         ObjectPoolManager.Instance.Spawn("Gold").transform.position = transform.position;
-        MonsterSpawner.Instance.SpawnMonster();
+        //MonsterSpawner.Instance.SpawnMonster();
     }
 
     private void ResetMonster()
