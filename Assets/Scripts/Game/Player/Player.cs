@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
         Debug.Log("Player Init!");
         _collider = GetComponent<Collider2D>();
         _totalHp = Hp;
+
+        GameManager.Instance.StartStage();
     }
 
     public void UpgradeColliderRange(float value = 0f)
@@ -61,7 +63,7 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        throw new NotImplementedException();
+        Debug.Log("Player is dead...");
     }
 
     public void GainGold(int value)
