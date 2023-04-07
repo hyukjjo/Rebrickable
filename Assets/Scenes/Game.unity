@@ -167,6 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2f840dab4a5d84b8884ef5560ecd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startingMonsterCount: 5
+  _spawnTime: 5
+  _currentSpawnTarget: Monster_Lv1
 --- !u!1001 &1108118742
 PrefabInstance:
   m_ObjectHideFlags: 0
