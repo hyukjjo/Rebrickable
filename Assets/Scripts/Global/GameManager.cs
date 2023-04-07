@@ -16,6 +16,14 @@ public class GameManager : Singleton<GameManager>
     [HideInInspector]
     public GameObject PlayerPrefab;
 
+    [SerializeField]
+    private float _currentStagePlayTime = 0f;
+    private float _stageLimitTime = 60.0f;
+    private Coroutine _stageCoroutine;
+    [SerializeField]
+    private int _currentStageLevel = 1;
+    private int _maxStageLevel = 5;
+    [SerializeField]
     private Player currentPlayer;
 
     public void KillAllMonstersInField()
@@ -33,6 +41,20 @@ public class GameManager : Singleton<GameManager>
         Debug.Log("Player Magnet Level Up!!");
     }
 
+    private void StageLevelUp()
+    {
+        if (_currentStageLevel >= _maxStageLevel)
+        {
+            Debug.Log("MAX STAGE LEVEL!");
+            return;
+        }
+
+        Debug.Log("Stage Level Up!!");
+        _currentStageLevel++;
+        _currentStagePlayTime = 0f;
+        _stageCoroutine = StartCoroutine(CheckStageTimeCoroutine());
+    }
+
     public void SetPlayer(Player player)
     {
         currentPlayer = player;
@@ -41,6 +63,26 @@ public class GameManager : Singleton<GameManager>
     public Player GetPlayer()
     {
         return currentPlayer;
+    }
+
+    public void StartStage()
+    {
+        Debug.Log("Stage Start!!");
+        _stageCoroutine = StartCoroutine(CheckStageTimeCoroutine());
+    }
+
+    private IEnumerator CheckStageTimeCoroutine()
+    {
+        while(_currentStagePlayTime < _stageLimitTime)
+        {
+            _currentStagePlayTime += Time.deltaTime;
+            yield return null;
+        }
+
+        if (_stageCoroutine != null)
+            _stageCoroutine = null;
+
+        StageLevelUp();
     }
 
     public void SaveDataAndExitGame(int gold = 0, int exp = 0)
