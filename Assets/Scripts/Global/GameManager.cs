@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Utility;
+using System;
 
 [System.Serializable]
 public class ProbabilityData
@@ -25,6 +26,8 @@ public class GameManager : Singleton<GameManager>
     private int _maxStageLevel = 5;
     [SerializeField]
     private Player currentPlayer;
+
+    public Action PlayerDead = () => { Debug.Log("Player is dead..."); };
 
     public void KillAllMonstersInField()
     {
