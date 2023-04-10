@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
         _collider = GetComponent<Collider2D>();
         _totalHp = Hp;
 
+        GameManager.Instance.PlayerDead += Die;
         GameManager.Instance.StartStage();
     }
 
@@ -57,13 +58,15 @@ public class Player : MonoBehaviour
 
         if (Hp <= 0)
         {
-            Die();
+            //Die();
+            GameManager.Instance.PlayerDead();
         }
     }
 
     private void Die()
     {
-        Debug.Log("Player is dead...");
+        //Debug.Log("Player is dead...");
+        gameObject.SetActive(false);
     }
 
     public void GainGold(int value)
