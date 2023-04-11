@@ -27,7 +27,43 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private Player currentPlayer;
 
+    #region 게임 플레이에 관련된 Actions
+    public Action StageStart = () => { Debug.Log("Stage has started!"); };
     public Action PlayerDead = () => { Debug.Log("Player is dead..."); };
+    public Action StageLevelUp = () => { Debug.Log("Stage level up!"); };
+    #endregion
+
+    private void Awake()
+    {
+        InitAllActions();
+    }
+
+    /// <summary>
+    /// GameManager 클래스에 정의된 Action 함수들을 Internally 초기화
+    /// </summary>
+    public void InitAllActions()
+    {
+        //
+        StageStart += () => 
+        {
+            _stageCoroutine = StartCoroutine(CheckStageTimeCoroutine());
+        };
+        //
+        StageLevelUp += () =>
+        {
+            if (_currentStageLevel >= _maxStageLevel)
+            {
+                Debug.Log("MAX STAGE LEVEL!");
+                return;
+            }
+
+            Debug.Log("Stage Level Up!!");
+            _currentStageLevel++;
+            _currentStagePlayTime = 0f;
+            _stageCoroutine = StartCoroutine(CheckStageTimeCoroutine());
+        };
+        //
+    }
 
     public void KillAllMonstersInField()
     {
@@ -44,20 +80,6 @@ public class GameManager : Singleton<GameManager>
         Debug.Log("Player Magnet Level Up!!");
     }
 
-    private void StageLevelUp()
-    {
-        if (_currentStageLevel >= _maxStageLevel)
-        {
-            Debug.Log("MAX STAGE LEVEL!");
-            return;
-        }
-
-        Debug.Log("Stage Level Up!!");
-        _currentStageLevel++;
-        _currentStagePlayTime = 0f;
-        _stageCoroutine = StartCoroutine(CheckStageTimeCoroutine());
-    }
-
     public void SetPlayer(Player player)
     {
         currentPlayer = player;
@@ -66,12 +88,6 @@ public class GameManager : Singleton<GameManager>
     public Player GetPlayer()
     {
         return currentPlayer;
-    }
-
-    public void StartStage()
-    {
-        Debug.Log("Stage Start!!");
-        _stageCoroutine = StartCoroutine(CheckStageTimeCoroutine());
     }
 
     private IEnumerator CheckStageTimeCoroutine()
