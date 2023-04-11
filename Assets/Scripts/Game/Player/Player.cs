@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         _totalHp = Hp;
 
         GameManager.Instance.PlayerDead += Die;
-        GameManager.Instance.StartStage();
+        GameManager.Instance.StageStart();
     }
 
     public void UpgradeColliderRange(float value = 0f)
