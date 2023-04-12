@@ -9,7 +9,7 @@ public class MonsterSpawner : Singleton<MonsterSpawner>
     [SerializeField]
     private float _spawnTime = 0f;
     [SerializeField]
-    private string _currentSpawnTarget = "Monster_Lv1";
+    private string _currentSpawnTargetName = "Monster_Lv1";
     private Coroutine _coroutine;
 
     // Start is called before the first frame update
@@ -36,7 +36,7 @@ public class MonsterSpawner : Singleton<MonsterSpawner>
 
     public void SpawnMonster()
     {
-        var monster = ObjectPoolManager.Instance.Spawn(_currentSpawnTarget);
+        var monster = ObjectPoolManager.Instance.Spawn(_currentSpawnTargetName);
         monster.transform.position = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
     }
 
