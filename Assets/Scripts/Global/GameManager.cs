@@ -28,9 +28,10 @@ public class GameManager : Singleton<GameManager>
     private Player currentPlayer;
 
     #region 게임 플레이에 관련된 Actions
-    public Action StageStart = () => { Debug.Log("Stage has started!"); };
-    public Action PlayerDead = () => { Debug.Log("Player is dead..."); };
-    public Action StageLevelUp = () => { Debug.Log("Stage level up!"); };
+    public Action StageStart =   () => { Debug.Log("Stage has started!"); };
+    public Action PlayerDead =   () => { Debug.Log("Player is dead..."); };
+    public Action StageLevelUp = () => { };
+    public Action StagePause =   () => { Debug.Log("Stage has paused!"); };
     #endregion
 
     private void Awake()
@@ -53,16 +54,19 @@ public class GameManager : Singleton<GameManager>
         {
             if (_currentStageLevel >= _maxStageLevel)
             {
-                Debug.Log("MAX STAGE LEVEL!");
+                Debug.Log("Current stage Level has already reached max level.");
                 return;
             }
-
             Debug.Log("Stage Level Up!!");
             _currentStageLevel++;
             _currentStagePlayTime = 0f;
             _stageCoroutine = StartCoroutine(CheckStageTimeCoroutine());
         };
         //
+        StagePause += () =>
+        {
+            //StagePause action에 팝업 관련 이벤트 등록 필요함
+        };
     }
 
     public void KillAllMonstersInField()
