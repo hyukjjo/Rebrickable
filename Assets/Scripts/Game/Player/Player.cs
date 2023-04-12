@@ -58,14 +58,12 @@ public class Player : MonoBehaviour
 
         if (Hp <= 0)
         {
-            //Die();
             GameManager.Instance.PlayerDead();
         }
     }
 
     private void Die()
     {
-        //Debug.Log("Player is dead...");
         gameObject.SetActive(false);
     }
 
