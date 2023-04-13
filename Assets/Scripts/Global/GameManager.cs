@@ -14,15 +14,14 @@ public class GameManager : Singleton<GameManager>
 {
     [HideInInspector]
     public bool LoadSceneReady = false;
-    [HideInInspector]
     public GameObject PlayerPrefab;
+    [HideInInspector]
+    public int _currentStageLevel = 1;
 
     [SerializeField]
     private float _currentStagePlayTime = 0f;
     private float _stageLimitTime = 60.0f;
     private Coroutine _stageCoroutine;
-    [SerializeField]
-    private int _currentStageLevel = 1;
     private int _maxStageLevel = 5;
     [SerializeField]
     private Player currentPlayer;
