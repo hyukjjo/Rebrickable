@@ -33,7 +33,7 @@ public class GameManager : Singleton<GameManager>
     public Action StagePause =   () => { Debug.Log("Stage has paused!"); };
     #endregion
 
-    private void Awake()
+    private void Start()
     {
         InitAllActions();
     }

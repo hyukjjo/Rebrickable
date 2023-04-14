@@ -13,10 +13,9 @@ public abstract class SkillController : MonoBehaviour
     [HideInInspector]
     public Coroutine _coroutine;
 
-    public virtual void Awake()
+    public virtual void Start()
     {
-        _cam = Camera.main;
-        _player = GameManager.Instance.GetPlayer().gameObject;
+        
     }
 
     public virtual void OnDisable()
@@ -29,6 +28,9 @@ public abstract class SkillController : MonoBehaviour
 
     public virtual void InitSkill(float spd, float dam, bool bDestroyed)
     {
+        _cam = Camera.main;
+        _player = GameManager.Instance.GetPlayer().gameObject;
+
         _playerSkillData = new PlayerSkillData();
         _playerSkillData.MoveSpeed = spd;
         _playerSkillData.Damage = dam;

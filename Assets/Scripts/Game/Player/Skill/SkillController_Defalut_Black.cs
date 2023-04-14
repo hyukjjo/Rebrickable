@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SkillController_Defalut_Black : SkillController
 {
-    public override void Awake()
+    public override void Start()
     {
-        base.Awake();
+        base.Start();
     }
 
     public override void OnDisable()
