@@ -41,7 +41,7 @@ public class FieldItem : MonoBehaviour
             switch (CurrentData.FieldItemType)
             {
                 case EFieldItemType.MonsterKill:
-                    GameManager.Instance.KillAllMonstersInField();
+                    GameManager.Instance.KillAllMonsters();
                     break;
                 case EFieldItemType.SpeedUpgrade:
                     GameManager.Instance.PlayerSpeedUp();
