@@ -27,10 +27,13 @@ public class GameManager : Singleton<GameManager>
     private Player currentPlayer;
 
     #region 게임 플레이에 관련된 Actions
-    public Action StageStart =   () => { Debug.Log("Stage has started!"); };
-    public Action PlayerDead =   () => { Debug.Log("Player is dead..."); };
-    public Action StageLevelUp = () => { };
-    public Action StagePause =   () => { Debug.Log("Stage has paused!"); };
+    public Action StageStart =      () => { Debug.Log("Stage has started!"); };
+    public Action PlayerDead =      () => { Debug.Log("Player is dead!"); };
+    public Action StageLevelUp =    () => { };
+    public Action StagePause =      () => { Debug.Log("Stage has paused!"); };
+    public Action KillAllMonsters = () => { Debug.Log("All mosters in field are dead!"); };
+    public Action PlayerSpeedUp =   () => { Debug.Log("Player speed up!"); };
+    public Action PlayerMagnetUp =  () => { Debug.Log("Player magnet up!"); };
     #endregion
 
     private void Start()
@@ -66,21 +69,6 @@ public class GameManager : Singleton<GameManager>
         {
             //StagePause action에 팝업 관련 이벤트 등록 필요함
         };
-    }
-
-    public void KillAllMonstersInField()
-    {
-        Debug.Log("Kill All Monsters!!");
-    }
-
-    public void PlayerSpeedUp()
-    {
-        Debug.Log("Player Speed Level Up!!");
-    }
-
-    public void PlayerMagnetUp()
-    {
-        Debug.Log("Player Magnet Level Up!!");
     }
 
     public void SetPlayer(Player player)
