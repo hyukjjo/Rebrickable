@@ -9,7 +9,7 @@ public class MonsterSpawner : Singleton<MonsterSpawner>
     [SerializeField]
     private float _spawnTime = 0f;
     [SerializeField]
-    private string _currentSpawnTargetName = "Monster_Lv1";
+    private string _currentSpawnTargetName = string.Empty;
     //[SerializeField]
     //private List<Monster> _monsterList = new List<Monster>();
 
@@ -29,7 +29,7 @@ public class MonsterSpawner : Singleton<MonsterSpawner>
 
     void InitSpawnMonster()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < _startingMonsterCount; i++)
         {
             SpawnMonster();
         }
@@ -51,8 +51,10 @@ public class MonsterSpawner : Singleton<MonsterSpawner>
 
     private IEnumerator SpawnMonsterCoroutine()
     {
-        SpawnMonster();
-
-        yield return new WaitForSeconds(_spawnTime);
+        while (true)
+        {
+            SpawnMonster();
+            yield return new WaitForSeconds(_spawnTime);
+        }
     }
 }
