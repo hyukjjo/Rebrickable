@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startingMonsterCount: 3
-  _spawnTime: 5
+  _spawnDelay: 5
   _currentSpawnTargetName: Monster_Lv1

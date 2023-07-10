@@ -7,7 +7,7 @@ public class MonsterSpawner : Singleton<MonsterSpawner>
     [SerializeField]
     private int _startingMonsterCount = 0;
     [SerializeField]
-    private float _spawnTime = 0f;
+    private float _spawnDelay = 0f;
     [SerializeField]
     private string _currentSpawnTargetName = string.Empty;
     //[SerializeField]
@@ -18,7 +18,8 @@ public class MonsterSpawner : Singleton<MonsterSpawner>
     // Start is called before the first frame update
     void Start()
     {
-        InitSpawnMonster();
+        //InitSpawnMonster();
+        GameManager.Instance.RoundStart += InitSpawnMonster;
     }
 
     // Update is called once per frame                     
@@ -29,24 +30,28 @@ public class MonsterSpawner : Singleton<MonsterSpawner>
 
     void InitSpawnMonster()
     {
-        for (int i = 0; i < _startingMonsterCount; i++)
-        {
-            SpawnMonster();
-        }
+        //for (int i = 0; i < _startingMonsterCount; i++)
+        //{
+        //    SpawnMonster();
+        //}
 
-        _coroutine = StartCoroutine(SpawnMonsterCoroutine());
+        if (_coroutine == null)
+        {
+            _coroutine = StartCoroutine(SpawnMonsterCoroutine());
+        }
     }
 
     public void SpawnMonster()
     {
-        _currentSpawnTargetName = "Monster_Lv" + GameManager.Instance._currentStageLevel.ToString();
+        _currentSpawnTargetName = "Monster_Lv" + GameManager.Instance._currentRoundLevel.ToString();
         var monster = ObjectPoolManager.Instance.Spawn(_currentSpawnTargetName);
         monster.transform.position = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
     }
 
     public void StopSpawnMonster()
     {
-
+        StopCoroutine(_coroutine);
+        _coroutine = null;
     }
 
     private IEnumerator SpawnMonsterCoroutine()
@@ -54,7 +59,7 @@ public class MonsterSpawner : Singleton<MonsterSpawner>
         while (true)
         {
             SpawnMonster();
-            yield return new WaitForSeconds(_spawnTime);
+            yield return new WaitForSeconds(_spawnDelay);
         }
     }
 }
