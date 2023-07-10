@@ -46,10 +46,11 @@ public class UIManager : Singleton<UIManager>
         }
     }
 
-    public void ShowPopUpWarning()
+    public void ShowPopUpWarning(string popupText)
     {
         InputLock();
         _popUpWarning.gameObject.SetActive(true);
+        _popUpWarning.SetText(popupText);
     }
 
     public void HidePopUpWarning()

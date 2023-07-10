@@ -17,6 +17,6 @@ public class CharacterView : ContentView
     public override void OnPointerDown(PointerEventData eventData)
     {
         base.OnPointerDown(eventData);
-        GameManager.Instance.LoadSceneReady = true;
+        GameManager.Instance.IsCharacterSelected = true;
     }
 }

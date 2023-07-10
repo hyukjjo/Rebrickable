@@ -27,13 +27,13 @@ namespace Starter.ContentModel
             switch (_selectionActionType)
             {
                 case SelectionActionType.GoToNextScene:
-                    if(GameManager.Instance.LoadSceneReady)
+                    if(GameManager.Instance.IsCharacterSelected)
                     {
                         SceneManager.LoadScene(_sceneToLoad);
                     }
                     else
                     {
-                        UIManager.Instance.ShowPopUpWarning();
+                        UIManager.Instance.ShowPopUpWarning("Please Select Character.");
                     }
                     break;
                 case SelectionActionType.GoToNextDepth:
@@ -46,7 +46,7 @@ namespace Starter.ContentModel
                     UIManager.Instance.ShowPopUpYesOrNo(() => GameManager.Instance.SaveDataAndExitGame(), null);
                     break;
                 case SelectionActionType.SelectCharacter:
-                    GameManager.Instance.LoadSceneReady = true;
+                    GameManager.Instance.IsCharacterSelected = true;
                     break;
                 case SelectionActionType.None:
                     break;

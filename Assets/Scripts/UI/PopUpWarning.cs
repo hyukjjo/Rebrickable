@@ -2,25 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PopUpWarning : MonoBehaviour
 {
     [SerializeField]
     private string _content;
-    private Text _text;
+    [SerializeField]
+    private TextMeshProUGUI _text;
 
-    private void OnEnable()
+    public void SetText(string content)
     {
-        if (_text == null)
-        {
-            _text = GetComponentInChildren<Text>();
-        }
+        _content = content;
 
-        _text.text = _content;
+        if (_text.text.Equals(string.Empty))
+            _text.text = _content;
     }
 
     private void OnDisable()
     {
-        UIManager.Instance.HidePopUpWarning();
+        _content = string.Empty;
+        _text.text = string.Empty;
     }
 }
