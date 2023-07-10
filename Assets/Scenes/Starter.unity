@@ -726,21 +726,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1213342286000522466, guid: fbd3082e11248bf488a7bc522ba7d19f, type: 3}
-      propertyPath: m_fontSize
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1213342286000522466, guid: fbd3082e11248bf488a7bc522ba7d19f, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 35
-      objectReference: {fileID: 0}
     - target: {fileID: 1548634813130237113, guid: fbd3082e11248bf488a7bc522ba7d19f, type: 3}
       propertyPath: m_Name
       value: UIManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548634813130237113, guid: fbd3082e11248bf488a7bc522ba7d19f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8203747974317923306, guid: fbd3082e11248bf488a7bc522ba7d19f, type: 3}
       propertyPath: m_RootOrder
