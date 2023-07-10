@@ -10,27 +10,36 @@ public class ProbabilityData
 
 }
 
+public enum GameState
+{
+    WAIT = 0,
+    ROUND,
+    PAUSE
+}
+
 public class GameManager : Singleton<GameManager>
 {
     [HideInInspector]
-    public bool LoadSceneReady = false;
+    public bool IsCharacterSelected = false;
     public GameObject PlayerPrefab;
     [HideInInspector]
-    public int _currentStageLevel = 1;
-
+    public int _currentRoundLevel = 1;
     [SerializeField]
-    private float _currentStagePlayTime = 0f;
-    private float _stageLimitTime = 60.0f;
-    private Coroutine _stageCoroutine;
-    private int _maxStageLevel = 5;
+    private GameState _currentState;
     [SerializeField]
-    private Player currentPlayer;
+    private float _currentRoundPlayTime = 0f;
+    [SerializeField]
+    private float _roundLimitTime = 60.0f;
+    private Coroutine _roundCoroutine;
+    private int _maxRoundLevel = 5;
+    [SerializeField]
+    private Player _currentPlayer;
 
     #region 게임 플레이에 관련된 Actions
-    public Action StageStart =      () => { Debug.Log("Stage has started!"); };
+    public Action RoundStart =      () => { Debug.Log("Stage has started!"); };
     public Action PlayerDead =      () => { Debug.Log("Player is dead!"); };
-    public Action StageLevelUp =    () => { };
-    public Action StagePause =      () => { Debug.Log("Stage has paused!"); };
+    public Action RoundLevelUp =    () => { };
+    public Action RoundPause =      () => { Debug.Log("Stage has paused!"); };
     public Action KillAllMonsters = () => { Debug.Log("All mosters in field are dead!"); };
     public Action PlayerSpeedUp =   () => { Debug.Log("Player speed up!"); };
     public Action PlayerMagnetUp =  () => { Debug.Log("Player magnet up!"); };
@@ -47,52 +56,63 @@ public class GameManager : Singleton<GameManager>
     public void InitAllActions()
     {
         //
-        StageStart += () => 
+        RoundStart += () => 
         {
-            _stageCoroutine = StartCoroutine(CheckStageTimeCoroutine());
+            _currentState = GameState.ROUND;
         };
         //
-        StageLevelUp += () =>
+        RoundLevelUp += () =>
         {
-            if (_currentStageLevel >= _maxStageLevel)
+            if (_currentRoundLevel >= _maxRoundLevel)
             {
                 Debug.Log("Current stage Level has already reached max level.");
                 return;
             }
             Debug.Log("Stage Level Up!!");
-            _currentStageLevel++;
-            _currentStagePlayTime = 0f;
-            _stageCoroutine = StartCoroutine(CheckStageTimeCoroutine());
+            _currentRoundLevel++;
+            _currentRoundPlayTime = 0f;
         };
         //
-        StagePause += () =>
+        RoundPause += () =>
         {
             //StagePause action에 팝업 관련 이벤트 등록 필요함
         };
     }
 
+    private void Update()
+    {
+        PlayGame();
+    }
+
+    private void PlayGame()
+    {
+        switch (_currentState)
+        {
+            case GameState.WAIT:
+                break;
+            case GameState.ROUND:
+                _currentRoundPlayTime += Time.deltaTime;
+
+                if(_currentRoundPlayTime >= _roundLimitTime)
+                {
+                    RoundLevelUp();
+                }
+                break;
+            case GameState.PAUSE:
+                break;
+            default:
+                break;
+        }
+    }
+
     public void SetPlayer(Player player)
     {
-        currentPlayer = player;
+        _currentPlayer = player;
     }
 
     public Player GetPlayer()
     {
-        return currentPlayer;
-    }
-
-    private IEnumerator CheckStageTimeCoroutine()
-    {
-        while(_currentStagePlayTime < _stageLimitTime)
-        {
-            _currentStagePlayTime += Time.deltaTime;
-            yield return null;
-        }
-
-        if (_stageCoroutine != null)
-            _stageCoroutine = null;
-
-        StageLevelUp();
+        return _currentPlayer;
     }
 
     public void SaveDataAndExitGame(int gold = 0, int exp = 0)
