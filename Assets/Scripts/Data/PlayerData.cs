@@ -12,7 +12,7 @@ public class PlayerData
 
     public static PlayerData GetPlayerData()
     {
-        var filePath = System.IO.Path.Combine(Application.streamingAssetsPath, "Data\\PlayerData.json");
+        var filePath = System.IO.Path.Combine(Application.streamingAssetsPath, "Data/PlayerData.json");
         var json = System.IO.File.ReadAllText(filePath);
         return JsonUtility.FromJson<PlayerData>(json);
     }
